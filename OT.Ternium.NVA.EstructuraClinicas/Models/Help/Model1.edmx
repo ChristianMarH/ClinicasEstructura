@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Nova_ServiciosMedicosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="spCatPersonalByIdNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+          <Parameter Name="IdPersonal" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Nova_ServiciosMedicosModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Nova_ServiciosMedicosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spCatPersonalByIdNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel.spCatPersonalByIdNM_Select_Result)">
+            <Parameter Name="IdPersonal" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spCatPersonalByIdNM_Select_Result">
+          <Property Type="Int32" Name="IdPersonal" Nullable="false" />
+          <Property Type="String" Name="dtFechaCaptura" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="vcApellidoPaterno" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="vcApellidoMaterno" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="vcNombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="vcNombreCompleto" Nullable="true" MaxLength="304" />
+          <Property Type="String" Name="dtFechaNacimiento" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="vcCurp" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="IdEstadoCivil" Nullable="true" />
+          <Property Type="String" Name="vcEstadoCivil" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdTipoPersonal" Nullable="true" />
+          <Property Type="String" Name="vcTipoPersonal" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="bSistemaActivo" Nullable="true" />
+          <Property Type="Int32" Name="bSistemaNoVence" Nullable="true" />
+          <Property Type="String" Name="dtFechaIngreso" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="dtFechaBaja" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="vcNumeroNomina" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="vcHorario" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="bSuspendido" Nullable="true" />
+          <Property Type="String" Name="dtInicioSuspension" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="dtFinSuspension" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="bUsuarioSistema" Nullable="true" />
+          <Property Type="String" Name="vcCodigoUsuario" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="vcCedulaProfesionalMedico" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="vcRegistroSSA" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdDependencia" Nullable="true" />
+          <Property Type="String" Name="vcDependencia" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdTipoMedico" Nullable="true" />
+          <Property Type="String" Name="vcTipoMedico" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdUnidadMedica" Nullable="true" />
+          <Property Type="String" Name="vcUnidad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="vcCubiculo" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdMedicoSuplente" Nullable="true" />
+          <Property Type="String" Name="vcMedicoSuplente" Nullable="true" MaxLength="304" />
+          <Property Type="Int32" Name="IdMedicoTripleta" Nullable="true" />
+          <Property Type="String" Name="vcMedicoTripleta" Nullable="true" MaxLength="304" />
+          <Property Type="Int32" Name="bCertificado" Nullable="true" />
+          <Property Type="Int32" Name="bRecertificado" Nullable="true" />
+          <Property Type="Int32" Name="bAyudanteQuirurgico" Nullable="true" />
+          <Property Type="Int32" Name="bPrivilegioUnico" Nullable="true" />
+          <Property Type="String" Name="dtCertificacion" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="vcObservacionesMedico" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="vcCedulaProfesionalEnfermera" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdTipoEnfermera" Nullable="true" />
+          <Property Type="String" Name="vcTipoEnfermera" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdGradoAcademico" Nullable="true" />
+          <Property Type="String" Name="vcGradoAcademico" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+          <Property Type="String" Name="vcEspecialidad" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdDependenciaEnfermera" Nullable="true" />
+          <Property Type="String" Name="vcDependenciaEnfermera" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdPuesto" Nullable="true" />
+          <Property Type="String" Name="vcPuesto" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IdAreaTrabajo" Nullable="true" />
+          <Property Type="String" Name="vcAreaTrabajo" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="bConsultaFueraHorario" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Nova_ServiciosMedicosModelStoreContainer" CdmEntityContainer="Entities" >
+          <FunctionImportMapping FunctionImportName="spCatPersonalByIdNM_Select" FunctionName="Nova_ServiciosMedicosModel.Store.spCatPersonalByIdNM_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel.spCatPersonalByIdNM_Select_Result">
+                <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+                <ScalarProperty Name="dtFechaCaptura" ColumnName="dtFechaCaptura" />
+                <ScalarProperty Name="vcApellidoPaterno" ColumnName="vcApellidoPaterno" />
+                <ScalarProperty Name="vcApellidoMaterno" ColumnName="vcApellidoMaterno" />
+                <ScalarProperty Name="vcNombre" ColumnName="vcNombre" />
+                <ScalarProperty Name="vcNombreCompleto" ColumnName="vcNombreCompleto" />
+                <ScalarProperty Name="dtFechaNacimiento" ColumnName="dtFechaNacimiento" />
+                <ScalarProperty Name="vcCurp" ColumnName="vcCurp" />
+                <ScalarProperty Name="IdEstadoCivil" ColumnName="IdEstadoCivil" />
+                <ScalarProperty Name="vcEstadoCivil" ColumnName="vcEstadoCivil" />
+                <ScalarProperty Name="IdTipoPersonal" ColumnName="IdTipoPersonal" />
+                <ScalarProperty Name="vcTipoPersonal" ColumnName="vcTipoPersonal" />
+                <ScalarProperty Name="bSistemaActivo" ColumnName="bSistemaActivo" />
+                <ScalarProperty Name="bSistemaNoVence" ColumnName="bSistemaNoVence" />
+                <ScalarProperty Name="dtFechaIngreso" ColumnName="dtFechaIngreso" />
+                <ScalarProperty Name="dtFechaBaja" ColumnName="dtFechaBaja" />
+                <ScalarProperty Name="vcNumeroNomina" ColumnName="vcNumeroNomina" />
+                <ScalarProperty Name="vcHorario" ColumnName="vcHorario" />
+                <ScalarProperty Name="bSuspendido" ColumnName="bSuspendido" />
+                <ScalarProperty Name="dtInicioSuspension" ColumnName="dtInicioSuspension" />
+                <ScalarProperty Name="dtFinSuspension" ColumnName="dtFinSuspension" />
+                <ScalarProperty Name="bUsuarioSistema" ColumnName="bUsuarioSistema" />
+                <ScalarProperty Name="vcCodigoUsuario" ColumnName="vcCodigoUsuario" />
+                <ScalarProperty Name="vcCedulaProfesionalMedico" ColumnName="vcCedulaProfesionalMedico" />
+                <ScalarProperty Name="vcRegistroSSA" ColumnName="vcRegistroSSA" />
+                <ScalarProperty Name="IdDependencia" ColumnName="IdDependencia" />
+                <ScalarProperty Name="vcDependencia" ColumnName="vcDependencia" />
+                <ScalarProperty Name="IdTipoMedico" ColumnName="IdTipoMedico" />
+                <ScalarProperty Name="vcTipoMedico" ColumnName="vcTipoMedico" />
+                <ScalarProperty Name="IdUnidadMedica" ColumnName="IdUnidadMedica" />
+                <ScalarProperty Name="vcUnidad" ColumnName="vcUnidad" />
+                <ScalarProperty Name="vcCubiculo" ColumnName="vcCubiculo" />
+                <ScalarProperty Name="IdMedicoSuplente" ColumnName="IdMedicoSuplente" />
+                <ScalarProperty Name="vcMedicoSuplente" ColumnName="vcMedicoSuplente" />
+                <ScalarProperty Name="IdMedicoTripleta" ColumnName="IdMedicoTripleta" />
+                <ScalarProperty Name="vcMedicoTripleta" ColumnName="vcMedicoTripleta" />
+                <ScalarProperty Name="bCertificado" ColumnName="bCertificado" />
+                <ScalarProperty Name="bRecertificado" ColumnName="bRecertificado" />
+                <ScalarProperty Name="bAyudanteQuirurgico" ColumnName="bAyudanteQuirurgico" />
+                <ScalarProperty Name="bPrivilegioUnico" ColumnName="bPrivilegioUnico" />
+                <ScalarProperty Name="dtCertificacion" ColumnName="dtCertificacion" />
+                <ScalarProperty Name="vcObservacionesMedico" ColumnName="vcObservacionesMedico" />
+                <ScalarProperty Name="vcCedulaProfesionalEnfermera" ColumnName="vcCedulaProfesionalEnfermera" />
+                <ScalarProperty Name="IdTipoEnfermera" ColumnName="IdTipoEnfermera" />
+                <ScalarProperty Name="vcTipoEnfermera" ColumnName="vcTipoEnfermera" />
+                <ScalarProperty Name="IdGradoAcademico" ColumnName="IdGradoAcademico" />
+                <ScalarProperty Name="vcGradoAcademico" ColumnName="vcGradoAcademico" />
+                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+                <ScalarProperty Name="vcEspecialidad" ColumnName="vcEspecialidad" />
+                <ScalarProperty Name="IdDependenciaEnfermera" ColumnName="IdDependenciaEnfermera" />
+                <ScalarProperty Name="vcDependenciaEnfermera" ColumnName="vcDependenciaEnfermera" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="vcPuesto" ColumnName="vcPuesto" />
+                <ScalarProperty Name="IdAreaTrabajo" ColumnName="IdAreaTrabajo" />
+                <ScalarProperty Name="vcAreaTrabajo" ColumnName="vcAreaTrabajo" />
+                <ScalarProperty Name="bConsultaFueraHorario" ColumnName="bConsultaFueraHorario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

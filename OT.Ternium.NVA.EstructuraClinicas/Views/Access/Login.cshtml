@@ -1,0 +1,392 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ingreso al sistema</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.cookie-1.4.1.min.js" type="text/javascript"></script>
+    <style>
+        .input, html {
+            font-size: 100%;
+        }
+
+        .rowWithPadding {
+            padding-bottom: 10px;
+        }
+
+        .btn:focus, .profile__avatar:focus {
+            outline: 0;
+        }
+
+        *, :after, :before {
+            box-sizing: border-box;
+        }
+
+        html {
+            line-height: 1.5;
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            font-family: 'Work Sans',Arial,Helvetica,sans-serif;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+            border: 0;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        .container-fluid {
+            padding-top: 50px;
+            transition-property: all;
+            transition-duration: .5s;
+            transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        }
+
+        .profile, .profile__form {
+            position: relative;
+        }
+
+        .profile--open .profile__form {
+            visibility: visible;
+            height: auto;
+            opacity: 1;
+        }
+
+        .profile--open .profile__fields {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .profile--open .profile__avatar {
+            border-radius: 50%;
+        }
+
+        .profile__form {
+            background: #fff;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            padding: 3em;
+            border-radius: .25em;
+            border-color: #999;
+            border-style: solid;
+            border-width: 1px;
+            transition: opacity .4s ease-in-out,height .4s ease-in-out,transform .4s cubic-bezier(.175,.885,.32,1.275),padding .4s cubic-bezier(.175,.885,.32,1.275);
+        }
+
+        .profile__fields {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .2s cubic-bezier(.175,.885,.32,1.275);
+            margin-top: 50px;
+        }
+
+        .profile__avatar {
+            border-radius: 1.25em;
+            overflow: hidden;
+            display: block;
+            transition: transform .3s cubic-bezier(.175,.885,.32,1.275);
+            will-change: transform;
+        }
+
+        .input, .label {
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        .profile__footer {
+            padding-top: 1em;
+        }
+
+        .field {
+            position: relative;
+            margin-bottom: 2em;
+        }
+
+        .label {
+            position: absolute;
+            bottom: 0;
+            color: #999;
+            left: 0;
+            transition: all .3s cubic-bezier(.175,.885,.32,1.275);
+        }
+
+        .input {
+            width: 100%;
+            border: 0;
+            padding: 0;
+            background-color: transparent;
+            border-bottom: 1px solid #eee;
+            color: #777;
+            transition: all .2s ease-in;
+        }
+
+            .input:focus {
+                outline: 0;
+                border-color: #ccc;
+            }
+
+                .input:focus + .label, input:valid + .label {
+                    transform: translateY(-100%);
+                    font-size: .75rem;
+                    color: #ccc;
+                }
+
+        .btn {
+            border: 0;
+            font-size: .75rem;
+            width: 100%;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            padding: 0 1.5rem;
+            color: #fff;
+            background: #f7a600;
+            text-transform: uppercase;
+            border-radius: .25rem;
+            letter-spacing: .2em;
+            transition: background .2s;
+        }
+
+            .btn:focus, .btn:hover {
+                background: #ffd800;
+            }
+
+        @@keyframes intro {
+            from {
+                opacity: 0;
+                top: 0;
+            }
+
+            to {
+                opacity: 1;
+                top: 50%;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba( 255, 255, 255, .8 ) 50% 50% no-repeat;
+        }
+
+        body.loading {
+            overflow: hidden;
+        }
+
+            body.loading .modal {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <form class="col-xs-offset-1 col-xs-10  col-md-offset-4 col-md-4">
+        <div class="profile--open">
+            <div class="profile__form">
+                <div class="row rowWithPadding">
+                    <div class="col-xs-6">
+                        <div style="color: #777;" class="pull-left" id="displayName">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <img class="profile__avatar pull-right img-responsive" src="~/Content/images/user.png" id="usrPhoto" alt="Avatar" />
+                    </div>
+                </div>
+                <div class="profile__fields">
+                    <div class="row rowWithPadding">
+                        <div class="field">
+                            <input type="text" id="user" class="input" required title="Usuario" pattern=".*\S.*" />
+                            <label for="user" class="label">Usuario</label>
+                        </div>
+                    </div>
+                    <div class="row rowWithPadding">
+                        <div class="field">
+                            <input type="password" id="password" class="input" required title="Clave" pattern=".*\S.*" />
+                            <label for="password" class="label">Clave</label>
+                        </div>
+                    </div>
+                    <div style="float: right; white-space: nowrap; margin-bottom: 10px; vertical-align: middle">
+                        <span id="lblRemember" style="color: #777">Recordar</span>
+                        <input style="height: 20px; width: 20px;" type="checkbox" id="chkRemember" />
+                    </div>
+                    <div class="profile__footer">
+                        <button class="btn" onclick="loginClick(); return false;">Ingresar</button>
+                        <span style="color: red" id="msg">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+    $(function () {
+        $('#lblRemember').on('click', function () {
+            $('#chkRemember').trigger('click');
+        });
+
+        localStorage.pass = '';
+
+        //getLoginData();
+
+        $('#user').on('blur', function () {
+            getLoginData();
+        });
+
+        if (localStorage.chkbx && localStorage.usrname) {
+            $('#chkRemember').attr('checked', 'checked');
+            $('#user').val(localStorage.usrname);
+            //$('#password').val(localStorage.pass);
+            $('#displayName').html(localStorage.displayName);
+            if (localStorage.usrPhoto) {
+                $('#usrPhoto').attr("src", "data:image/jpg;base64," + localStorage.usrPhoto);
+            }
+        } else {
+            $('#chkRemember').removeAttr('checked');
+            $('#user').val('');
+            $('#password').val('');
+            $('#usrPhoto').attr("src", "@(Url.Content("~/Content/images/user.png"))");
+            $('#displayName').html('');
+        }
+
+        $('#chkRemember').click(function () {
+            if ($('#chkRemember').is(':checked')) {
+                localStorage.usrname = $('#user').val();
+                //localStorage.pass = $('#password').val();
+                localStorage.chkbx = $('#chkRemember').val();
+                localStorage.displayName = $('#displayName').html();
+            } else {
+                localStorage.usrname = '';
+                localStorage.pass = '';
+                localStorage.chkbx = '';
+                localStorage.usrPhoto = '';
+                localStorage.displayName = '';
+            }
+        });
+    });
+
+    function clearLoginData() {
+        localStorage.usrPhoto = '';
+        localStorage.displayName = '';
+        $('#displayName').html('');
+        $('#usrPhoto').attr("src", "@(Url.Content("~/Content/images/user.png"))")
+    }
+
+    function getLoginData() {
+        var rootUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(Url.Content("~/"), true));
+        rootUrl = @Html.Raw(Context.Request.IsLocal && !Context.Request.IsSecureConnection  ? "'http'" : "'https'") + '://' + window.location.host + rootUrl;
+        if ($('#user').val()) {
+            localStorage.usrname = getUserName();
+            //localStorage.pass = $('#password').val();
+            localStorage.chkbx = $('#chkRemember').val();
+            localStorage.displayName = $('#displayName').html();
+            $.ajax({
+                url:  rootUrl + "LoginInfo.axd?username=" + getUserName(),
+                success: function (result) {
+                    if (result.displayName) {
+                        if (!result.usrPhoto) {
+                            $('#usrPhoto').attr("src", "@(Url.Content("~/Content/images/user.png"))")
+                        }
+                        else {
+                            localStorage.usrPhoto = result.usrPhoto;
+                            $('#usrPhoto').attr("src", "data:image/jpg;base64," + result.usrPhoto)
+                        }
+                        localStorage.displayName = result.displayName;
+                        $('#displayName').html(result.displayName);
+
+                    }
+                    else {
+                        clearLoginData();
+                    }
+                },
+                error: function (msg) {
+                    clearLoginData();
+                }
+            });
+        }
+        else {
+            clearLoginData();
+        }
+    }
+
+    function getBaseUrl() {
+        var re = new RegExp(/^.*\//);
+        return re.exec(window.location.href);
+    }
+
+    function loginClick() {
+        var rootUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(Url.Content("~/"), true));
+        rootUrl = @Html.Raw(Context.Request.IsLocal && !Context.Request.IsSecureConnection  ? "'http'" : "'https'") + '://' + window.location.host + rootUrl;
+        $("#msg").empty();
+        if ($("#user").val().length != 0 && $("#password").val().length != 0) {
+            var postData = new FormData();
+            postData.append('User', getUserName());
+            postData.append('Password', $("#password").val());
+            $("body").addClass("loading");
+            $.ajax({
+                type: "POST",
+                url: rootUrl + "LoginForms.axd?customLoginErrors=true",
+                data: postData,
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: successCallbackfunction,
+                error: errorCallbackfunction
+            });
+        } else {
+            $("#msg").html("Ingrese usuario y clave.");
+        }
+    }
+    function getUserName() {
+        var user = $("#user").val();
+        user = user.replace("/", "\\");
+        if (user.indexOf('\\') < 0)
+            user = "ternium\\" + user;
+        return user;
+    }
+
+    function successCallbackfunction(result) {
+        //$("body").removeClass("loading");
+        var redirectUrl = getParameterByName('ReturnUrl');
+        if (!redirectUrl) {
+            redirectUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(Url.Content("~/"), true));
+        }
+        //TODO Jose: Verify expiring is correct
+        $.cookie.json = true;
+        $.cookie('userCookie', { username: $("#user").val() }, { expires: 10, path: '/' });
+        window.location.href = redirectUrl;
+    }
+    function errorCallbackfunction(result) {
+        $("body").removeClass("loading");
+        $("#msg").html(result.responseText);
+    }
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+</script>    <div class="modal"></div>
+</body>
+</html>

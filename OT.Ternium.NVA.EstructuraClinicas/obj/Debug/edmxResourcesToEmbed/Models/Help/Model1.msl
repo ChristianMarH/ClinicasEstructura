@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Nova_ServiciosMedicosModelStoreContainer" CdmEntityContainer="Entities">
+    <FunctionImportMapping FunctionImportName="spCatPersonalByIdNM_Select" FunctionName="Nova_ServiciosMedicosModel.Store.spCatPersonalByIdNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel.spCatPersonalByIdNM_Select_Result">
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="dtFechaCaptura" ColumnName="dtFechaCaptura" />
+          <ScalarProperty Name="vcApellidoPaterno" ColumnName="vcApellidoPaterno" />
+          <ScalarProperty Name="vcApellidoMaterno" ColumnName="vcApellidoMaterno" />
+          <ScalarProperty Name="vcNombre" ColumnName="vcNombre" />
+          <ScalarProperty Name="vcNombreCompleto" ColumnName="vcNombreCompleto" />
+          <ScalarProperty Name="dtFechaNacimiento" ColumnName="dtFechaNacimiento" />
+          <ScalarProperty Name="vcCurp" ColumnName="vcCurp" />
+          <ScalarProperty Name="IdEstadoCivil" ColumnName="IdEstadoCivil" />
+          <ScalarProperty Name="vcEstadoCivil" ColumnName="vcEstadoCivil" />
+          <ScalarProperty Name="IdTipoPersonal" ColumnName="IdTipoPersonal" />
+          <ScalarProperty Name="vcTipoPersonal" ColumnName="vcTipoPersonal" />
+          <ScalarProperty Name="bSistemaActivo" ColumnName="bSistemaActivo" />
+          <ScalarProperty Name="bSistemaNoVence" ColumnName="bSistemaNoVence" />
+          <ScalarProperty Name="dtFechaIngreso" ColumnName="dtFechaIngreso" />
+          <ScalarProperty Name="dtFechaBaja" ColumnName="dtFechaBaja" />
+          <ScalarProperty Name="vcNumeroNomina" ColumnName="vcNumeroNomina" />
+          <ScalarProperty Name="vcHorario" ColumnName="vcHorario" />
+          <ScalarProperty Name="bSuspendido" ColumnName="bSuspendido" />
+          <ScalarProperty Name="dtInicioSuspension" ColumnName="dtInicioSuspension" />
+          <ScalarProperty Name="dtFinSuspension" ColumnName="dtFinSuspension" />
+          <ScalarProperty Name="bUsuarioSistema" ColumnName="bUsuarioSistema" />
+          <ScalarProperty Name="vcCodigoUsuario" ColumnName="vcCodigoUsuario" />
+          <ScalarProperty Name="vcCedulaProfesionalMedico" ColumnName="vcCedulaProfesionalMedico" />
+          <ScalarProperty Name="vcRegistroSSA" ColumnName="vcRegistroSSA" />
+          <ScalarProperty Name="IdDependencia" ColumnName="IdDependencia" />
+          <ScalarProperty Name="vcDependencia" ColumnName="vcDependencia" />
+          <ScalarProperty Name="IdTipoMedico" ColumnName="IdTipoMedico" />
+          <ScalarProperty Name="vcTipoMedico" ColumnName="vcTipoMedico" />
+          <ScalarProperty Name="IdUnidadMedica" ColumnName="IdUnidadMedica" />
+          <ScalarProperty Name="vcUnidad" ColumnName="vcUnidad" />
+          <ScalarProperty Name="vcCubiculo" ColumnName="vcCubiculo" />
+          <ScalarProperty Name="IdMedicoSuplente" ColumnName="IdMedicoSuplente" />
+          <ScalarProperty Name="vcMedicoSuplente" ColumnName="vcMedicoSuplente" />
+          <ScalarProperty Name="IdMedicoTripleta" ColumnName="IdMedicoTripleta" />
+          <ScalarProperty Name="vcMedicoTripleta" ColumnName="vcMedicoTripleta" />
+          <ScalarProperty Name="bCertificado" ColumnName="bCertificado" />
+          <ScalarProperty Name="bRecertificado" ColumnName="bRecertificado" />
+          <ScalarProperty Name="bAyudanteQuirurgico" ColumnName="bAyudanteQuirurgico" />
+          <ScalarProperty Name="bPrivilegioUnico" ColumnName="bPrivilegioUnico" />
+          <ScalarProperty Name="dtCertificacion" ColumnName="dtCertificacion" />
+          <ScalarProperty Name="vcObservacionesMedico" ColumnName="vcObservacionesMedico" />
+          <ScalarProperty Name="vcCedulaProfesionalEnfermera" ColumnName="vcCedulaProfesionalEnfermera" />
+          <ScalarProperty Name="IdTipoEnfermera" ColumnName="IdTipoEnfermera" />
+          <ScalarProperty Name="vcTipoEnfermera" ColumnName="vcTipoEnfermera" />
+          <ScalarProperty Name="IdGradoAcademico" ColumnName="IdGradoAcademico" />
+          <ScalarProperty Name="vcGradoAcademico" ColumnName="vcGradoAcademico" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="vcEspecialidad" ColumnName="vcEspecialidad" />
+          <ScalarProperty Name="IdDependenciaEnfermera" ColumnName="IdDependenciaEnfermera" />
+          <ScalarProperty Name="vcDependenciaEnfermera" ColumnName="vcDependenciaEnfermera" />
+          <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+          <ScalarProperty Name="vcPuesto" ColumnName="vcPuesto" />
+          <ScalarProperty Name="IdAreaTrabajo" ColumnName="IdAreaTrabajo" />
+          <ScalarProperty Name="vcAreaTrabajo" ColumnName="vcAreaTrabajo" />
+          <ScalarProperty Name="bConsultaFueraHorario" ColumnName="bConsultaFueraHorario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Nova_ServiciosMedicosModel1StoreContainer" CdmEntityContainer="Entities">
+    <FunctionImportMapping FunctionImportName="spAM_AgendaCitaServiciosNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.spAM_AgendaCitaServiciosNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spAM_AgendaCitaServiciosNM_Select_Result">
+          <ScalarProperty Name="IdAgendaCita" ColumnName="IdAgendaCita" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="DescripcionServicios" ColumnName="DescripcionServicios" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spAMNM_BusquedaMedico" FunctionName="Nova_ServiciosMedicosModel1.Store.spAMNM_BusquedaMedico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spAMNM_BusquedaMedico_Result">
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="vcClaveMedico" ColumnName="vcClaveMedico" />
+          <ScalarProperty Name="vcNombreMedico" ColumnName="vcNombreMedico" />
+          <ScalarProperty Name="vcClaveNombreMedico" ColumnName="vcClaveNombreMedico" />
+          <ScalarProperty Name="bSistemaActivo" ColumnName="bSistemaActivo" />
+          <ScalarProperty Name="vcSistemaActivo" ColumnName="vcSistemaActivo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spAuxNM_Fechas_horas" FunctionName="Nova_ServiciosMedicosModel1.Store.spAuxNM_Fechas_horas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spAuxNM_Fechas_horas_Result">
+          <ScalarProperty Name="iCero" ColumnName="iCero" />
+          <ScalarProperty Name="INegativo" ColumnName="INegativo" />
+          <ScalarProperty Name="IPositivo" ColumnName="IPositivo" />
+          <ScalarProperty Name="strEmpty" ColumnName="strEmpty" />
+          <ScalarProperty Name="vcFechaActual" ColumnName="vcFechaActual" />
+          <ScalarProperty Name="vcFechaInicialMes" ColumnName="vcFechaInicialMes" />
+          <ScalarProperty Name="vcFechaFinalMes" ColumnName="vcFechaFinalMes" />
+          <ScalarProperty Name="vcFechaAñoInicial" ColumnName="vcFechaAñoInicial" />
+          <ScalarProperty Name="vcFechaAñoFinal" ColumnName="vcFechaAñoFinal" />
+          <ScalarProperty Name="vcHora" ColumnName="vcHora" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatAsociadoNM_ByIdNumeroSocio" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatAsociadoNM_ByIdNumeroSocio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatAsociadoNM_ByIdNumeroSocio_Result">
+          <ScalarProperty Name="vcNumeroExpediente" ColumnName="vcNumeroExpediente" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="iNumeroAfiliado" ColumnName="iNumeroAfiliado" />
+          <ScalarProperty Name="vcAfiliado" ColumnName="vcAfiliado" />
+          <ScalarProperty Name="vcTelefono" ColumnName="vcTelefono" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="vcDomicilio" ColumnName="vcDomicilio" />
+          <ScalarProperty Name="IdColonia" ColumnName="IdColonia" />
+          <ScalarProperty Name="vcColonia" ColumnName="vcColonia" />
+          <ScalarProperty Name="IdAseguradora" ColumnName="IdAseguradora" />
+          <ScalarProperty Name="vcAseguradora" ColumnName="vcAseguradora" />
+          <ScalarProperty Name="vcPoliza" ColumnName="vcPoliza" />
+          <ScalarProperty Name="iNoPoliza" ColumnName="iNoPoliza" />
+          <ScalarProperty Name="dtInicio" ColumnName="dtInicio" />
+          <ScalarProperty Name="dtFinal" ColumnName="dtFinal" />
+          <ScalarProperty Name="vcCurp" ColumnName="vcCurp" />
+          <ScalarProperty Name="IdInstitucional" ColumnName="IdInstitucional" />
+          <ScalarProperty Name="vcInstitucional" ColumnName="vcInstitucional" />
+          <ScalarProperty Name="vcApellidoPaterno" ColumnName="vcApellidoPaterno" />
+          <ScalarProperty Name="vcApellidoMaterno" ColumnName="vcApellidoMaterno" />
+          <ScalarProperty Name="vcNombre" ColumnName="vcNombre" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="IdSexo" ColumnName="IdSexo" />
+          <ScalarProperty Name="vcSexo" ColumnName="vcSexo" />
+          <ScalarProperty Name="IdEstadoCivil" ColumnName="IdEstadoCivil" />
+          <ScalarProperty Name="vcEstadoCivil" ColumnName="vcEstadoCivil" />
+          <ScalarProperty Name="dtFechaNacimiento" ColumnName="dtFechaNacimiento" />
+          <ScalarProperty Name="IdTipoSangre" ColumnName="IdTipoSangre" />
+          <ScalarProperty Name="vcTipoSangre" ColumnName="vcTipoSangre" />
+          <ScalarProperty Name="bConfidencial" ColumnName="bConfidencial" />
+          <ScalarProperty Name="bRequiereEmpresa" ColumnName="bRequiereEmpresa" />
+          <ScalarProperty Name="bReqExpedienteFisico" ColumnName="bReqExpedienteFisico" />
+          <ScalarProperty Name="IdMedicoFamiliar" ColumnName="IdMedicoFamiliar" />
+          <ScalarProperty Name="vcMedicoFamiliar" ColumnName="vcMedicoFamiliar" />
+          <ScalarProperty Name="IdClasificacionAfiliado" ColumnName="IdClasificacionAfiliado" />
+          <ScalarProperty Name="vcClasificacionAfiliado" ColumnName="vcClasificacionAfiliado" />
+          <ScalarProperty Name="IdTitular" ColumnName="IdTitular" />
+          <ScalarProperty Name="vcTitular" ColumnName="vcTitular" />
+          <ScalarProperty Name="vcReferencias" ColumnName="vcReferencias" />
+          <ScalarProperty Name="vcCodigoPostal" ColumnName="vcCodigoPostal" />
+          <ScalarProperty Name="vcTelefono2" ColumnName="vcTelefono2" />
+          <ScalarProperty Name="IdTipoAfiliado" ColumnName="IdTipoAfiliado" />
+          <ScalarProperty Name="vcTipoAfiliado" ColumnName="vcTipoAfiliado" />
+          <ScalarProperty Name="dtFechaInicio" ColumnName="dtFechaInicio" />
+          <ScalarProperty Name="dtFechaTermino" ColumnName="dtFechaTermino" />
+          <ScalarProperty Name="vcContratante" ColumnName="vcContratante" />
+          <ScalarProperty Name="iNumeroCertificado" ColumnName="iNumeroCertificado" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="vcEmpresa" ColumnName="vcEmpresa" />
+          <ScalarProperty Name="vcNumeroSocio" ColumnName="vcNumeroSocio" />
+          <ScalarProperty Name="vcClaveFamiliar" ColumnName="vcClaveFamiliar" />
+          <ScalarProperty Name="vcNumeroTernium" ColumnName="vcNumeroTernium" />
+          <ScalarProperty Name="vcEdad" ColumnName="vcEdad" />
+          <ScalarProperty Name="IdReligion" ColumnName="IdReligion" />
+          <ScalarProperty Name="vcReligion" ColumnName="vcReligion" />
+          <ScalarProperty Name="IdNacionalidad" ColumnName="IdNacionalidad" />
+          <ScalarProperty Name="vcNacionalidad" ColumnName="vcNacionalidad" />
+          <ScalarProperty Name="bTitularPersona" ColumnName="bTitularPersona" />
+          <ScalarProperty Name="IdEstadoNacimiento" ColumnName="IdEstadoNacimiento" />
+          <ScalarProperty Name="vcEstadoNacimiento" ColumnName="vcEstadoNacimiento" />
+          <ScalarProperty Name="vcNombreContacto" ColumnName="vcNombreContacto" />
+          <ScalarProperty Name="vcDireccionContacto" ColumnName="vcDireccionContacto" />
+          <ScalarProperty Name="IdColoniaContacto" ColumnName="IdColoniaContacto" />
+          <ScalarProperty Name="vcColoniaContacto" ColumnName="vcColoniaContacto" />
+          <ScalarProperty Name="iCodigoPostalContacto" ColumnName="iCodigoPostalContacto" />
+          <ScalarProperty Name="vcTelefonoContacto" ColumnName="vcTelefonoContacto" />
+          <ScalarProperty Name="IdEscolaridad" ColumnName="IdEscolaridad" />
+          <ScalarProperty Name="vcEscolaridad" ColumnName="vcEscolaridad" />
+          <ScalarProperty Name="IdOcupacion" ColumnName="IdOcupacion" />
+          <ScalarProperty Name="vcOcupacion" ColumnName="vcOcupacion" />
+          <ScalarProperty Name="vcPuesto" ColumnName="vcPuesto" />
+          <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+          <ScalarProperty Name="vcUnidad" ColumnName="vcUnidad" />
+          <ScalarProperty Name="bServicioSuspendido" ColumnName="bServicioSuspendido" />
+          <ScalarProperty Name="vcClavePaciente" ColumnName="vcClavePaciente" />
+          <ScalarProperty Name="vcCorreoElectronico" ColumnName="vcCorreoElectronico" />
+          <ScalarProperty Name="vcCorreoContacto" ColumnName="vcCorreoContacto" />
+          <ScalarProperty Name="vcTelefono2Contacto" ColumnName="vcTelefono2Contacto" />
+          <ScalarProperty Name="vcMovilContacto" ColumnName="vcMovilContacto" />
+          <ScalarProperty Name="vcTelefonoMovil" ColumnName="vcTelefonoMovil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatAsociadoNM_MedicoCombo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatAsociadoNM_MedicoCombo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatAsociadoNM_MedicoCombo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatAsociadoNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatAsociadoNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatAsociadoNM_Select_Result">
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="vcNumeroExpediente" ColumnName="vcNumeroExpediente" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="iNumeroAfiliado" ColumnName="iNumeroAfiliado" />
+          <ScalarProperty Name="vcAfiliado" ColumnName="vcAfiliado" />
+          <ScalarProperty Name="vcTelefono" ColumnName="vcTelefono" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="vcActivo" ColumnName="vcActivo" />
+          <ScalarProperty Name="vcDomicilio" ColumnName="vcDomicilio" />
+          <ScalarProperty Name="IdColonia" ColumnName="IdColonia" />
+          <ScalarProperty Name="vcColonia" ColumnName="vcColonia" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="vcCiudad" ColumnName="vcCiudad" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="vcEstado" ColumnName="vcEstado" />
+          <ScalarProperty Name="IdAseguradora" ColumnName="IdAseguradora" />
+          <ScalarProperty Name="vcAseguradora" ColumnName="vcAseguradora" />
+          <ScalarProperty Name="vcPoliza" ColumnName="vcPoliza" />
+          <ScalarProperty Name="iNoPoliza" ColumnName="iNoPoliza" />
+          <ScalarProperty Name="dtInicio" ColumnName="dtInicio" />
+          <ScalarProperty Name="dtFinal" ColumnName="dtFinal" />
+          <ScalarProperty Name="vcCurp" ColumnName="vcCurp" />
+          <ScalarProperty Name="IdInstitucional" ColumnName="IdInstitucional" />
+          <ScalarProperty Name="vcInstitucional" ColumnName="vcInstitucional" />
+          <ScalarProperty Name="vcApellidoPaterno" ColumnName="vcApellidoPaterno" />
+          <ScalarProperty Name="vcApellidoMaterno" ColumnName="vcApellidoMaterno" />
+          <ScalarProperty Name="vcNombre" ColumnName="vcNombre" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="IdSexo" ColumnName="IdSexo" />
+          <ScalarProperty Name="vcSexo" ColumnName="vcSexo" />
+          <ScalarProperty Name="IdEstadoCivil" ColumnName="IdEstadoCivil" />
+          <ScalarProperty Name="vcEstadoCivil" ColumnName="vcEstadoCivil" />
+          <ScalarProperty Name="dtFechaNacimiento" ColumnName="dtFechaNacimiento" />
+          <ScalarProperty Name="IdTipoSangre" ColumnName="IdTipoSangre" />
+          <ScalarProperty Name="vcTipoSangre" ColumnName="vcTipoSangre" />
+          <ScalarProperty Name="bConfidencial" ColumnName="bConfidencial" />
+          <ScalarProperty Name="bRequiereEmpresa" ColumnName="bRequiereEmpresa" />
+          <ScalarProperty Name="bReqExpedienteFisico" ColumnName="bReqExpedienteFisico" />
+          <ScalarProperty Name="IdMedicoFamiliar" ColumnName="IdMedicoFamiliar" />
+          <ScalarProperty Name="vcMedicoFamiliar" ColumnName="vcMedicoFamiliar" />
+          <ScalarProperty Name="IdClasificacionAfiliado" ColumnName="IdClasificacionAfiliado" />
+          <ScalarProperty Name="vcClasificacionAfiliado" ColumnName="vcClasificacionAfiliado" />
+          <ScalarProperty Name="idTitular" ColumnName="idTitular" />
+          <ScalarProperty Name="vcReferencias" ColumnName="vcReferencias" />
+          <ScalarProperty Name="vcCodigoPostal" ColumnName="vcCodigoPostal" />
+          <ScalarProperty Name="vcTelefono2" ColumnName="vcTelefono2" />
+          <ScalarProperty Name="IdTipoAfiliado" ColumnName="IdTipoAfiliado" />
+          <ScalarProperty Name="vcTipoAfiliado" ColumnName="vcTipoAfiliado" />
+          <ScalarProperty Name="dtFechaInicio" ColumnName="dtFechaInicio" />
+          <ScalarProperty Name="dtFechaTermino" ColumnName="dtFechaTermino" />
+          <ScalarProperty Name="vcContratante" ColumnName="vcContratante" />
+          <ScalarProperty Name="iNumeroCertificado" ColumnName="iNumeroCertificado" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="vcNombreEmpresa" ColumnName="vcNombreEmpresa" />
+          <ScalarProperty Name="idEstadoEmpresa" ColumnName="idEstadoEmpresa" />
+          <ScalarProperty Name="vcEstadoEmpresa" ColumnName="vcEstadoEmpresa" />
+          <ScalarProperty Name="idCiudadEmpresa" ColumnName="idCiudadEmpresa" />
+          <ScalarProperty Name="vcCiudadEmpresa" ColumnName="vcCiudadEmpresa" />
+          <ScalarProperty Name="idColoniaEmpresa" ColumnName="idColoniaEmpresa" />
+          <ScalarProperty Name="vcColoniaEmpresa" ColumnName="vcColoniaEmpresa" />
+          <ScalarProperty Name="vcDireccionEmpresa" ColumnName="vcDireccionEmpresa" />
+          <ScalarProperty Name="vcCodigoPostalEmpresa" ColumnName="vcCodigoPostalEmpresa" />
+          <ScalarProperty Name="vcTelefonoEmpresa" ColumnName="vcTelefonoEmpresa" />
+          <ScalarProperty Name="vcTitular" ColumnName="vcTitular" />
+          <ScalarProperty Name="vcCorreoElectronico" ColumnName="vcCorreoElectronico" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatCategoriaHojaFrontalNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatCategoriaHojaFrontalNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatCategoriaHojaFrontalNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatControlFertilidadNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatControlFertilidadNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatControlFertilidadNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatDiagnosticoNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatDiagnosticoNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatDiagnosticoNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatDismenorreaNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatDismenorreaNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatDismenorreaNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatEspecialidadNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatEspecialidadNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatEspecialidadNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatEspecialidadNM_MedicoCombo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatEspecialidadNM_MedicoCombo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatEspecialidadNM_MedicoCombo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatEstatusCitaNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatEstatusCitaNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatEstatusCitaNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatEstatusInterconsultaNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatEstatusInterconsultaNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatEstatusInterconsultaNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatPersonalNM_ByLogin" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatPersonalNM_ByLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatPersonalNM_ByLogin_Result">
+          <ScalarProperty Name="vcCodigoUsuario" ColumnName="vcCodigoUsuario" />
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="vcNombrePersonal" ColumnName="vcNombrePersonal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatPersonalNM_Medico" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatPersonalNM_Medico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatPersonalNM_Medico_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatPersonalNM_MedicoCombo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatPersonalNM_MedicoCombo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatPersonalNM_MedicoCombo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatPrioridadNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatPrioridadNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatPrioridadNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatProblemaNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatProblemaNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatProblemaNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatPronosticoMedicoNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatPronosticoMedicoNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatPronosticoMedicoNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatTipoAfiliadoNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatTipoAfiliadoNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatTipoAfiliadoNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCatTipoDiagnosticoNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCatTipoDiagnosticoNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCatTipoDiagnosticoNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCldCatConfiguracionCalidadNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.spCldCatConfiguracionCalidadNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCldCatConfiguracionCalidadNM_Select_Result">
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="vcDescripcion" ColumnName="vcDescripcion" />
+          <ScalarProperty Name="vcValor" ColumnName="vcValor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCldCatDatoCatalogoNM_Combo" FunctionName="Nova_ServiciosMedicosModel1.Store.spCldCatDatoCatalogoNM_Combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spCldCatDatoCatalogoNM_Combo_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spNotaDiabetesNM_InfoGeneral" FunctionName="Nova_ServiciosMedicosModel1.Store.spNotaDiabetesNM_InfoGeneral">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spNotaDiabetesNM_InfoGeneral_Result">
+          <ScalarProperty Name="OUT_ID" ColumnName="OUT_ID" />
+          <ScalarProperty Name="OUT_c_mensaje" ColumnName="OUT_c_mensaje" />
+          <ScalarProperty Name="OUT_d_mensaje" ColumnName="OUT_d_mensaje" />
+          <ScalarProperty Name="OUT_MsgError" ColumnName="OUT_MsgError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRelNotaMedicaDiagSecNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.spRelNotaMedicaDiagSecNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spRelNotaMedicaDiagSecNM_Select_Result">
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="IdDiagnostico" ColumnName="IdDiagnostico" />
+          <ScalarProperty Name="vcDiagnostico" ColumnName="vcDiagnostico" />
+          <ScalarProperty Name="IdTipoDiagnostico" ColumnName="IdTipoDiagnostico" />
+          <ScalarProperty Name="vcTipoDiagnositico" ColumnName="vcTipoDiagnositico" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRelPersonalEspecialidadNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.spRelPersonalEspecialidadNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spRelPersonalEspecialidadNM_Select_Result">
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="vcEspecialidad" ColumnName="vcEspecialidad" />
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="IdTipoConsulta" ColumnName="IdTipoConsulta" />
+          <ScalarProperty Name="vcTipoConsulta" ColumnName="vcTipoConsulta" />
+          <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
+          <ScalarProperty Name="vcServicio" ColumnName="vcServicio" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="vcCedulaEspecialidad" ColumnName="vcCedulaEspecialidad" />
+          <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+          <ScalarProperty Name="vcEntidad" ColumnName="vcEntidad" />
+          <ScalarProperty Name="IdUniversidad" ColumnName="IdUniversidad" />
+          <ScalarProperty Name="vcUniversidad" ColumnName="vcUniversidad" />
+          <ScalarProperty Name="IdPrioridad" ColumnName="IdPrioridad" />
+          <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
+          <ScalarProperty Name="vcDependencia" ColumnName="vcDependencia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblAccesoExpedienteNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblAccesoExpedienteNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblAccesoExpedienteNM_Select_Result">
+          <ScalarProperty Name="IdAccesoExpediente" ColumnName="IdAccesoExpediente" />
+          <ScalarProperty Name="vcNumeroExpediente" ColumnName="vcNumeroExpediente" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="vcMedico" ColumnName="vcMedico" />
+          <ScalarProperty Name="dtFechaInicial" ColumnName="dtFechaInicial" />
+          <ScalarProperty Name="dtFechaFinal" ColumnName="dtFechaFinal" />
+          <ScalarProperty Name="iEstatus" ColumnName="iEstatus" />
+          <ScalarProperty Name="asvcEstatus" ColumnName="asvcEstatus" />
+          <ScalarProperty Name="asvcComentarios" ColumnName="asvcComentarios" />
+          <ScalarProperty Name="asIdUsuarioGenero" ColumnName="asIdUsuarioGenero" />
+          <ScalarProperty Name="vcUsuarioGenero" ColumnName="vcUsuarioGenero" />
+          <ScalarProperty Name="dtFecha" ColumnName="dtFecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spTblAgendaCitaNM_ByCitados" FunctionName="Nova_ServiciosMedicosModel1.Store.spTblAgendaCitaNM_ByCitados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spTblAgendaCitaNM_ByCitados_Result">
+          <ScalarProperty Name="IdAgendaCita" ColumnName="IdAgendaCita" />
+          <ScalarProperty Name="vcNumeroExpediente" ColumnName="vcNumeroExpediente" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="iNumeroAfiliado" ColumnName="iNumeroAfiliado" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="vcEmpresa" ColumnName="vcEmpresa" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="vcMedico" ColumnName="vcMedico" />
+          <ScalarProperty Name="dtFecha" ColumnName="dtFecha" />
+          <ScalarProperty Name="vcHora" ColumnName="vcHora" />
+          <ScalarProperty Name="IdEstatusCita" ColumnName="IdEstatusCita" />
+          <ScalarProperty Name="vcEstatusCita" ColumnName="vcEstatusCita" />
+          <ScalarProperty Name="vcSexo" ColumnName="vcSexo" />
+          <ScalarProperty Name="vcEdad" ColumnName="vcEdad" />
+          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+          <ScalarProperty Name="vcSucursal" ColumnName="vcSucursal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblAgendaCitaNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblAgendaCitaNM_Select" />
+    <FunctionImportMapping FunctionImportName="sptblAlergiaPacienteGridNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblAlergiaPacienteGridNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblAlergiaPacienteGridNM_Select_Result">
+          <ScalarProperty Name="IdAlergiaPaciente" ColumnName="IdAlergiaPaciente" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="vcNombrePaciente" ColumnName="vcNombrePaciente" />
+          <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
+          <ScalarProperty Name="vcAlergia" ColumnName="vcAlergia" />
+          <ScalarProperty Name="IdTipoAlergia" ColumnName="IdTipoAlergia" />
+          <ScalarProperty Name="vcTipoAlergia" ColumnName="vcTipoAlergia" />
+          <ScalarProperty Name="vcDescripcionTipo" ColumnName="vcDescripcionTipo" />
+          <ScalarProperty Name="IdSal" ColumnName="IdSal" />
+          <ScalarProperty Name="vcSal" ColumnName="vcSal" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="vcActivo" ColumnName="vcActivo" />
+          <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+          <ScalarProperty Name="vcUsuarioCreacion" ColumnName="vcUsuarioCreacion" />
+          <ScalarProperty Name="dtFechaCreacion" ColumnName="dtFechaCreacion" />
+          <ScalarProperty Name="dtHoraCreacion" ColumnName="dtHoraCreacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblHojaFrontalNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblHojaFrontalNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblHojaFrontalNM_Select_Result">
+          <ScalarProperty Name="IdHojaFrontal" ColumnName="IdHojaFrontal" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="vcCategoria" ColumnName="vcCategoria" />
+          <ScalarProperty Name="IdDescripcion" ColumnName="IdDescripcion" />
+          <ScalarProperty Name="vcDescripcion" ColumnName="vcDescripcion" />
+          <ScalarProperty Name="IdDiagnostico" ColumnName="IdDiagnostico" />
+          <ScalarProperty Name="vcDiagnostico" ColumnName="vcDiagnostico" />
+          <ScalarProperty Name="IdProblema" ColumnName="IdProblema" />
+          <ScalarProperty Name="vcProblema" ColumnName="vcProblema" />
+          <ScalarProperty Name="dtFechaRegistro" ColumnName="dtFechaRegistro" />
+          <ScalarProperty Name="dtHoraRegistro" ColumnName="dtHoraRegistro" />
+          <ScalarProperty Name="IdEspecialidadRegistro" ColumnName="IdEspecialidadRegistro" />
+          <ScalarProperty Name="vcEspecialidadRegistro" ColumnName="vcEspecialidadRegistro" />
+          <ScalarProperty Name="bTerminado" ColumnName="bTerminado" />
+          <ScalarProperty Name="vcTerminado" ColumnName="vcTerminado" />
+          <ScalarProperty Name="dtFechaTermino" ColumnName="dtFechaTermino" />
+          <ScalarProperty Name="dtHoraTermino" ColumnName="dtHoraTermino" />
+          <ScalarProperty Name="IdEspecialidadTermino" ColumnName="IdEspecialidadTermino" />
+          <ScalarProperty Name="vcEspecialidadTermino" ColumnName="vcEspecialidadTermino" />
+          <ScalarProperty Name="IdMedicoRegistro" ColumnName="IdMedicoRegistro" />
+          <ScalarProperty Name="vcMedicoRegistro" ColumnName="vcMedicoRegistro" />
+          <ScalarProperty Name="IdMedicoTermino" ColumnName="IdMedicoTermino" />
+          <ScalarProperty Name="vcMedicoTermino" ColumnName="vcMedicoTermino" />
+          <ScalarProperty Name="vcEstadioCancer" ColumnName="vcEstadioCancer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblHojaFrontalNM_Update" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblHojaFrontalNM_Update">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblHojaFrontalNM_Update_Result">
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="Identificador1" ColumnName="Identificador1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblInformacionPerinatalNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblInformacionPerinatalNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblInformacionPerinatalNM_Select_Result">
+          <ScalarProperty Name="IdInformacionPerinatal" ColumnName="IdInformacionPerinatal" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="IdMedicoRegisto" ColumnName="IdMedicoRegisto" />
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="dtFechaRegistro" ColumnName="dtFechaRegistro" />
+          <ScalarProperty Name="bAO1" ColumnName="bAO1" />
+          <ScalarProperty Name="bAO2" ColumnName="bAO2" />
+          <ScalarProperty Name="bAO3" ColumnName="bAO3" />
+          <ScalarProperty Name="bAO4" ColumnName="bAO4" />
+          <ScalarProperty Name="bAO5" ColumnName="bAO5" />
+          <ScalarProperty Name="bAO6" ColumnName="bAO6" />
+          <ScalarProperty Name="bAO7" ColumnName="bAO7" />
+          <ScalarProperty Name="bAO8" ColumnName="bAO8" />
+          <ScalarProperty Name="bAO9" ColumnName="bAO9" />
+          <ScalarProperty Name="bEA1" ColumnName="bEA1" />
+          <ScalarProperty Name="bEA2" ColumnName="bEA2" />
+          <ScalarProperty Name="bEA3" ColumnName="bEA3" />
+          <ScalarProperty Name="bEA4" ColumnName="bEA4" />
+          <ScalarProperty Name="bEA5" ColumnName="bEA5" />
+          <ScalarProperty Name="bEA6" ColumnName="bEA6" />
+          <ScalarProperty Name="bEA7" ColumnName="bEA7" />
+          <ScalarProperty Name="bEA8" ColumnName="bEA8" />
+          <ScalarProperty Name="bEA9" ColumnName="bEA9" />
+          <ScalarProperty Name="bEA10" ColumnName="bEA10" />
+          <ScalarProperty Name="bEA11" ColumnName="bEA11" />
+          <ScalarProperty Name="bEA12" ColumnName="bEA12" />
+          <ScalarProperty Name="bEA13" ColumnName="bEA13" />
+          <ScalarProperty Name="bHC1" ColumnName="bHC1" />
+          <ScalarProperty Name="bHC2" ColumnName="bHC2" />
+          <ScalarProperty Name="bHC3" ColumnName="bHC3" />
+          <ScalarProperty Name="bHC4" ColumnName="bHC4" />
+          <ScalarProperty Name="bHC5" ColumnName="bHC5" />
+          <ScalarProperty Name="bHC6" ColumnName="bHC6" />
+          <ScalarProperty Name="bHC7" ColumnName="bHC7" />
+          <ScalarProperty Name="bHC8" ColumnName="bHC8" />
+          <ScalarProperty Name="bHC9" ColumnName="bHC9" />
+          <ScalarProperty Name="bHC10" ColumnName="bHC10" />
+          <ScalarProperty Name="vcComentario_AO1" ColumnName="vcComentario_AO1" />
+          <ScalarProperty Name="vcComentario_AO2" ColumnName="vcComentario_AO2" />
+          <ScalarProperty Name="vcComentario_AO3" ColumnName="vcComentario_AO3" />
+          <ScalarProperty Name="vcComentario_AO4" ColumnName="vcComentario_AO4" />
+          <ScalarProperty Name="vcComentario_AO5" ColumnName="vcComentario_AO5" />
+          <ScalarProperty Name="vcComentario_AO6" ColumnName="vcComentario_AO6" />
+          <ScalarProperty Name="vcComentario_AO7" ColumnName="vcComentario_AO7" />
+          <ScalarProperty Name="vcComentario_AO8" ColumnName="vcComentario_AO8" />
+          <ScalarProperty Name="vcComentario_AO9" ColumnName="vcComentario_AO9" />
+          <ScalarProperty Name="vcComentario_EA1" ColumnName="vcComentario_EA1" />
+          <ScalarProperty Name="vcComentario_EA2" ColumnName="vcComentario_EA2" />
+          <ScalarProperty Name="vcComentario_EA3" ColumnName="vcComentario_EA3" />
+          <ScalarProperty Name="vcComentario_EA4" ColumnName="vcComentario_EA4" />
+          <ScalarProperty Name="vcComentario_EA5" ColumnName="vcComentario_EA5" />
+          <ScalarProperty Name="vcComentario_EA6" ColumnName="vcComentario_EA6" />
+          <ScalarProperty Name="vcComentario_EA7" ColumnName="vcComentario_EA7" />
+          <ScalarProperty Name="vcComentario_EA8" ColumnName="vcComentario_EA8" />
+          <ScalarProperty Name="vcComentario_EA9" ColumnName="vcComentario_EA9" />
+          <ScalarProperty Name="vcComentario_EA10" ColumnName="vcComentario_EA10" />
+          <ScalarProperty Name="vcComentario_EA11" ColumnName="vcComentario_EA11" />
+          <ScalarProperty Name="vcComentario_EA12" ColumnName="vcComentario_EA12" />
+          <ScalarProperty Name="vcComentario_EA13" ColumnName="vcComentario_EA13" />
+          <ScalarProperty Name="vcComentario_HC1" ColumnName="vcComentario_HC1" />
+          <ScalarProperty Name="vcComentario_HC2" ColumnName="vcComentario_HC2" />
+          <ScalarProperty Name="vcComentario_HC3" ColumnName="vcComentario_HC3" />
+          <ScalarProperty Name="vcComentario_HC4" ColumnName="vcComentario_HC4" />
+          <ScalarProperty Name="vcComentario_HC5" ColumnName="vcComentario_HC5" />
+          <ScalarProperty Name="vcComentario_HC6" ColumnName="vcComentario_HC6" />
+          <ScalarProperty Name="vcComentario_HC7" ColumnName="vcComentario_HC7" />
+          <ScalarProperty Name="vcComentario_HC8" ColumnName="vcComentario_HC8" />
+          <ScalarProperty Name="vcComentario_HC9" ColumnName="vcComentario_HC9" />
+          <ScalarProperty Name="vcComentario_HC10" ColumnName="vcComentario_HC10" />
+          <ScalarProperty Name="bAltoRiesgo" ColumnName="bAltoRiesgo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblInterconsultaNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblInterconsultaNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblInterconsultaNM_Select_Result">
+          <ScalarProperty Name="IdInterconsulta" ColumnName="IdInterconsulta" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="IdEspecialidadSolicita" ColumnName="IdEspecialidadSolicita" />
+          <ScalarProperty Name="vcEspecialidadSolicita" ColumnName="vcEspecialidadSolicita" />
+          <ScalarProperty Name="IdPrioridad" ColumnName="IdPrioridad" />
+          <ScalarProperty Name="vcPrioridad" ColumnName="vcPrioridad" />
+          <ScalarProperty Name="IdEstatusInterconsulta" ColumnName="IdEstatusInterconsulta" />
+          <ScalarProperty Name="vcEstatusInterconsulta" ColumnName="vcEstatusInterconsulta" />
+          <ScalarProperty Name="IdMedicoSolicitante" ColumnName="IdMedicoSolicitante" />
+          <ScalarProperty Name="vcMedicoSolicitante" ColumnName="vcMedicoSolicitante" />
+          <ScalarProperty Name="IdMedicoSolicitado" ColumnName="IdMedicoSolicitado" />
+          <ScalarProperty Name="vcMedicoSolicitado" ColumnName="vcMedicoSolicitado" />
+          <ScalarProperty Name="dtFechaTentativa" ColumnName="dtFechaTentativa" />
+          <ScalarProperty Name="vcMotivoInterconsulta" ColumnName="vcMotivoInterconsulta" />
+          <ScalarProperty Name="bAtendida" ColumnName="bAtendida" />
+          <ScalarProperty Name="vcAtendida" ColumnName="vcAtendida" />
+          <ScalarProperty Name="IdEspecialidadInterconsulta" ColumnName="IdEspecialidadInterconsulta" />
+          <ScalarProperty Name="vcEspecialidadInterconsulta" ColumnName="vcEspecialidadInterconsulta" />
+          <ScalarProperty Name="IdIngresoHospital" ColumnName="IdIngresoHospital" />
+          <ScalarProperty Name="IdEventoAseguradora" ColumnName="IdEventoAseguradora" />
+          <ScalarProperty Name="vcEventoAseguradora" ColumnName="vcEventoAseguradora" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblInterconsultaNM_Update" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblInterconsultaNM_Update">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblInterconsultaNM_Update_Result">
+          <ScalarProperty Name="OUT_ID" ColumnName="OUT_ID" />
+          <ScalarProperty Name="OUT_c_mensaje" ColumnName="OUT_c_mensaje" />
+          <ScalarProperty Name="OUT_d_mensaje" ColumnName="OUT_d_mensaje" />
+          <ScalarProperty Name="OUT_MsgError" ColumnName="OUT_MsgError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblNotaGinecobstetricaNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblNotaGinecobstetricaNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblNotaGinecobstetricaNM_Select_Result">
+          <ScalarProperty Name="IdNotaGinecobstetrica" ColumnName="IdNotaGinecobstetrica" />
+          <ScalarProperty Name="iMenarcaAnios" ColumnName="iMenarcaAnios" />
+          <ScalarProperty Name="iRitmo1" ColumnName="iRitmo1" />
+          <ScalarProperty Name="iRitmo2" ColumnName="iRitmo2" />
+          <ScalarProperty Name="IdDismenorrea" ColumnName="IdDismenorrea" />
+          <ScalarProperty Name="vcDismenorrea" ColumnName="vcDismenorrea" />
+          <ScalarProperty Name="IdControlFertilidad" ColumnName="IdControlFertilidad" />
+          <ScalarProperty Name="vcControlFertilidad" ColumnName="vcControlFertilidad" />
+          <ScalarProperty Name="iDuranteAnios" ColumnName="iDuranteAnios" />
+          <ScalarProperty Name="iDuranteMeses" ColumnName="iDuranteMeses" />
+          <ScalarProperty Name="iSuspendioAnios" ColumnName="iSuspendioAnios" />
+          <ScalarProperty Name="iSuspendioMeses" ColumnName="iSuspendioMeses" />
+          <ScalarProperty Name="iIvsa" ColumnName="iIvsa" />
+          <ScalarProperty Name="bVsa" ColumnName="bVsa" />
+          <ScalarProperty Name="bDispareunia" ColumnName="bDispareunia" />
+          <ScalarProperty Name="dtFUM" ColumnName="dtFUM" />
+          <ScalarProperty Name="dtFUA" ColumnName="dtFUA" />
+          <ScalarProperty Name="dtFUP" ColumnName="dtFUP" />
+          <ScalarProperty Name="dtFUC" ColumnName="dtFUC" />
+          <ScalarProperty Name="iGesta" ColumnName="iGesta" />
+          <ScalarProperty Name="iCesareas" ColumnName="iCesareas" />
+          <ScalarProperty Name="iPara" ColumnName="iPara" />
+          <ScalarProperty Name="iAbortos" ColumnName="iAbortos" />
+          <ScalarProperty Name="iPesoPromedio" ColumnName="iPesoPromedio" />
+          <ScalarProperty Name="iNacidosVivos" ColumnName="iNacidosVivos" />
+          <ScalarProperty Name="iEctopicos" ColumnName="iEctopicos" />
+          <ScalarProperty Name="iObitos" ColumnName="iObitos" />
+          <ScalarProperty Name="vcProblemasEmbarazo" ColumnName="vcProblemasEmbarazo" />
+          <ScalarProperty Name="vcComentarios" ColumnName="vcComentarios" />
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="IdControlFertAnterior" ColumnName="IdControlFertAnterior" />
+          <ScalarProperty Name="vcControlFertilidadAnterior" ColumnName="vcControlFertilidadAnterior" />
+          <ScalarProperty Name="iUtilizacionAniosAnterior" ColumnName="iUtilizacionAniosAnterior" />
+          <ScalarProperty Name="iUtilizacionMesesAnterior" ColumnName="iUtilizacionMesesAnterior" />
+          <ScalarProperty Name="iSuspensionAniosAnterior" ColumnName="iSuspensionAniosAnterior" />
+          <ScalarProperty Name="iSuspensionMesesAnterior" ColumnName="iSuspensionMesesAnterior" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblNotaMedicaByIdNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblNotaMedicaByIdNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblNotaMedicaByIdNM_Select_Result">
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="dtFechaHora" ColumnName="dtFechaHora" />
+          <ScalarProperty Name="vcSubjetivo" ColumnName="vcSubjetivo" />
+          <ScalarProperty Name="vcObjetivo" ColumnName="vcObjetivo" />
+          <ScalarProperty Name="vcAnalisis" ColumnName="vcAnalisis" />
+          <ScalarProperty Name="vcPlan" ColumnName="vcPlan" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="IdDiagnosticoPrincipal" ColumnName="IdDiagnosticoPrincipal" />
+          <ScalarProperty Name="bRequiereUrgencias" ColumnName="bRequiereUrgencias" />
+          <ScalarProperty Name="bNotaIngresoHospital" ColumnName="bNotaIngresoHospital" />
+          <ScalarProperty Name="vcIndicaciones" ColumnName="vcIndicaciones" />
+          <ScalarProperty Name="IdTipoDiagnostico" ColumnName="IdTipoDiagnostico" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblNotaMedicaNM_Edit_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblNotaMedicaNM_Edit_Select" />
+    <FunctionImportMapping FunctionImportName="sptblNotaMedicaNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblNotaMedicaNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblNotaMedicaNM_Select_Result">
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
+          <ScalarProperty Name="vcMedico" ColumnName="vcMedico" />
+          <ScalarProperty Name="dtFecha" ColumnName="dtFecha" />
+          <ScalarProperty Name="vcHora" ColumnName="vcHora" />
+          <ScalarProperty Name="vcSubjetivo" ColumnName="vcSubjetivo" />
+          <ScalarProperty Name="vcObjetivo" ColumnName="vcObjetivo" />
+          <ScalarProperty Name="vcAnalisis" ColumnName="vcAnalisis" />
+          <ScalarProperty Name="vcPlan" ColumnName="vcPlan" />
+          <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+          <ScalarProperty Name="vcEspecialidad" ColumnName="vcEspecialidad" />
+          <ScalarProperty Name="IdDiagnosticoPrincipal" ColumnName="IdDiagnosticoPrincipal" />
+          <ScalarProperty Name="vcDiagnosticoPrincipal" ColumnName="vcDiagnosticoPrincipal" />
+          <ScalarProperty Name="bRequiereUrgencias" ColumnName="bRequiereUrgencias" />
+          <ScalarProperty Name="bNotaIngresoHospital" ColumnName="bNotaIngresoHospital" />
+          <ScalarProperty Name="vcIndicaciones" ColumnName="vcIndicaciones" />
+          <ScalarProperty Name="IdTipoDiagnostico" ColumnName="IdTipoDiagnostico" />
+          <ScalarProperty Name="vcTipoDiagnositico" ColumnName="vcTipoDiagnositico" />
+          <ScalarProperty Name="IdAgendaCita" ColumnName="IdAgendaCita" />
+          <ScalarProperty Name="IdDependencia" ColumnName="IdDependencia" />
+          <ScalarProperty Name="vcDependencia" ColumnName="vcDependencia" />
+          <ScalarProperty Name="IdCancerTamano" ColumnName="IdCancerTamano" />
+          <ScalarProperty Name="IdCancerNodulo" ColumnName="IdCancerNodulo" />
+          <ScalarProperty Name="IdCancerMetastasis" ColumnName="IdCancerMetastasis" />
+          <ScalarProperty Name="IdEtapaClinica" ColumnName="IdEtapaClinica" />
+          <ScalarProperty Name="IdGradoLinfoma" ColumnName="IdGradoLinfoma" />
+          <ScalarProperty Name="IdEstatusCancer" ColumnName="IdEstatusCancer" />
+          <ScalarProperty Name="IdEventoAseguradora" ColumnName="IdEventoAseguradora" />
+          <ScalarProperty Name="vcEventoAseguradora" ColumnName="vcEventoAseguradora" />
+          <ScalarProperty Name="IdGradiente" ColumnName="IdGradiente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblSesionUsuarioNM_Select" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblSesionUsuarioNM_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblSesionUsuarioNM_Select_Result">
+          <ScalarProperty Name="vcFecha" ColumnName="vcFecha" />
+          <ScalarProperty Name="vcUsuarioRed" ColumnName="vcUsuarioRed" />
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="vcPersonal" ColumnName="vcPersonal" />
+          <ScalarProperty Name="IdNumeroSocio" ColumnName="IdNumeroSocio" />
+          <ScalarProperty Name="vcNombreAfiliado" ColumnName="vcNombreAfiliado" />
+          <ScalarProperty Name="vcFullNumeroSocio" ColumnName="vcFullNumeroSocio" />
+          <ScalarProperty Name="IdExpedienteMedico" ColumnName="IdExpedienteMedico" />
+          <ScalarProperty Name="IdNotaMedica" ColumnName="IdNotaMedica" />
+          <ScalarProperty Name="IdNotaEnfermeria" ColumnName="IdNotaEnfermeria" />
+          <ScalarProperty Name="IdIngresoHospital" ColumnName="IdIngresoHospital" />
+          <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+          <ScalarProperty Name="vcArea" ColumnName="vcArea" />
+          <ScalarProperty Name="IdAgendaCita" ColumnName="IdAgendaCita" />
+          <ScalarProperty Name="IdIngresoPaciente" ColumnName="IdIngresoPaciente" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="vcMensaje" ColumnName="vcMensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sptblSesionUsuarioNM_Update" FunctionName="Nova_ServiciosMedicosModel1.Store.sptblSesionUsuarioNM_Update">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.sptblSesionUsuarioNM_Update_Result">
+          <ScalarProperty Name="OUT_c_mensaje" ColumnName="OUT_c_mensaje" />
+          <ScalarProperty Name="OUT_d_mensaje" ColumnName="OUT_d_mensaje" />
+          <ScalarProperty Name="OUT_MsgError" ColumnName="OUT_MsgError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spTerminarInterconsultaNM" FunctionName="Nova_ServiciosMedicosModel1.Store.spTerminarInterconsultaNM">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Nova_ServiciosMedicosModel1.spTerminarInterconsultaNM_Result">
+          <ScalarProperty Name="iError" ColumnName="iError" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+          <ScalarProperty Name="idInterconsulta" ColumnName="idInterconsulta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

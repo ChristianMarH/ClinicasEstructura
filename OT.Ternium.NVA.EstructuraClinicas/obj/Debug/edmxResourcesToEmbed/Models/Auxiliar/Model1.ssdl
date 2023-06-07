@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Nova_ServiciosMedicosModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="spAM_AgendaCitaServiciosNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdAgendaCita" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spAMNM_BusquedaMedico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="ClaveMedico" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombreMedico" Type="varchar" Mode="In" />
+    <Parameter Name="bSistemaActivo" Type="int" Mode="In" />
+    <Parameter Name="dtFecha" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spAuxNM_Fechas_horas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica" />
+  <Function Name="spCatAsociadoNM_ByIdNumeroSocio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatAsociadoNM_MedicoCombo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="vcFullNumeroSocio" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombreSocio" Type="varchar" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="IdUsuarioGenera" Type="int" Mode="In" />
+    <Parameter Name="bCitado" Type="int" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatAsociadoNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="NumeroAfiliado" Type="decimal" Mode="In" />
+    <Parameter Name="vcAfiliado" Type="varchar" Mode="In" />
+    <Parameter Name="vcTelefono" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="vcDomicilio" Type="varchar" Mode="In" />
+    <Parameter Name="IdColonia" Type="int" Mode="In" />
+    <Parameter Name="IdAseguradora" Type="int" Mode="In" />
+    <Parameter Name="vcPoliza" Type="varchar" Mode="In" />
+    <Parameter Name="iNoPoliza" Type="int" Mode="In" />
+    <Parameter Name="dtInicio" Type="varchar" Mode="In" />
+    <Parameter Name="dtFinal" Type="varchar" Mode="In" />
+    <Parameter Name="vcCurp" Type="varchar" Mode="In" />
+    <Parameter Name="IdInstitucional" Type="int" Mode="In" />
+    <Parameter Name="vcApellidoPaterno" Type="varchar" Mode="In" />
+    <Parameter Name="vcApellidoMaterno" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombre" Type="varchar" Mode="In" />
+    <Parameter Name="IdSexo" Type="int" Mode="In" />
+    <Parameter Name="IdEstadoCivil" Type="int" Mode="In" />
+    <Parameter Name="dtFechaNacimiento" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoSangre" Type="int" Mode="In" />
+    <Parameter Name="bConfidencial" Type="int" Mode="In" />
+    <Parameter Name="bRequiereEmpresa" Type="int" Mode="In" />
+    <Parameter Name="bReqExpedienteFisico" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoFamiliar" Type="int" Mode="In" />
+    <Parameter Name="IdClasificacionAfiliado" Type="int" Mode="In" />
+    <Parameter Name="idTitular" Type="int" Mode="In" />
+    <Parameter Name="vcReferencias" Type="varchar" Mode="In" />
+    <Parameter Name="vcCodigoPostal" Type="varchar" Mode="In" />
+    <Parameter Name="vcTelefono2" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoAfiliado" Type="int" Mode="In" />
+    <Parameter Name="dtFechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="dtFechaTermino" Type="varchar" Mode="In" />
+    <Parameter Name="vcContratante" Type="varchar" Mode="In" />
+    <Parameter Name="iNumeroCertificado" Type="int" Mode="In" />
+    <Parameter Name="IdEmpresa" Type="int" Mode="In" />
+    <Parameter Name="vcNombreCompleto" Type="varchar" Mode="In" />
+    <Parameter Name="vcNumeroAfiliadoFull" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spCatCategoriaHojaFrontalNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdCategoriaHojaFrontal" Type="int" Mode="In" />
+    <Parameter Name="vcCategoriaHojaFrontal" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatControlFertilidadNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdControlFertilidad" Type="int" Mode="In" />
+    <Parameter Name="vcControlFertilidad" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatDiagnosticoNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdDiagnostico" Type="int" Mode="In" />
+    <Parameter Name="vcDiagnostico" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatDismenorreaNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdDismenorrea" Type="int" Mode="In" />
+    <Parameter Name="vcDismenorrea" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatEspecialidadNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="vcEspecialidad" Type="varchar" Mode="In" />
+    <Parameter Name="vcCodigoEspecialidad" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatEspecialidadNM_MedicoCombo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="vcEspecialidad" Type="varchar" Mode="In" />
+    <Parameter Name="vcCodigoEspecialidad" Type="varchar" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="IdUsuarioGenera" Type="int" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatEstatusCitaNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdEstatusCita" Type="int" Mode="In" />
+    <Parameter Name="vcEstatusCita" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatEstatusInterconsultaNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="Identificador" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatPersonalNM_ByLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="vcCodigoUsuario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spCatPersonalNM_Medico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="vcCodigoMedico" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombreMedico" Type="varchar" Mode="In" />
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="IdTipoMedico" Type="int" Mode="In" />
+    <Parameter Name="IdUnidadMedica" Type="int" Mode="In" />
+    <Parameter Name="IdAreaTrabajo" Type="int" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatPersonalNM_MedicoCombo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="vcCodigoMedico" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombreMedico" Type="varchar" Mode="In" />
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="IdTipoMedico" Type="int" Mode="In" />
+    <Parameter Name="IdUnidadMedica" Type="int" Mode="In" />
+    <Parameter Name="IdAreaTrabajo" Type="int" Mode="In" />
+    <Parameter Name="IdUsuarioGenera" Type="int" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatPrioridadNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="Identificador" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatProblemaNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdProblema" Type="int" Mode="In" />
+    <Parameter Name="vcProblema" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoProblema" Type="int" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatPronosticoMedicoNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdPronosticoMedico" Type="int" Mode="In" />
+    <Parameter Name="vcPronosticoMedico" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatTipoAfiliadoNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdTipoAfiliado" Type="int" Mode="In" />
+    <Parameter Name="vcTipoAfiliado" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCatTipoDiagnosticoNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdTipoDiagnostico" Type="int" Mode="In" />
+    <Parameter Name="vcTipoDiagnostico" Type="varchar" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCldCatConfiguracionCalidadNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdVariable" Type="numeric" Mode="In" />
+    <Parameter Name="vcDescripcion" Type="varchar" Mode="In" />
+    <Parameter Name="vcValor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spCldCatDatoCatalogoNM_Combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdCatalogoMaestro" Type="int" Mode="In" />
+    <Parameter Name="IdDatoCatalogo" Type="int" Mode="In" />
+    <Parameter Name="vcCampo" Type="varchar" Mode="In" />
+    <Parameter Name="vcValor" Type="varchar" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+    <Parameter Name="bDefault" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spNotaDiabetesNM_InfoGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="parvcInformacion" Type="varchar" Mode="In" />
+    <Parameter Name="parId1" Type="int" Mode="In" />
+    <Parameter Name="parId2" Type="int" Mode="In" />
+    <Parameter Name="parId3" Type="int" Mode="In" />
+    <Parameter Name="parId4" Type="int" Mode="In" />
+    <Parameter Name="parId5" Type="int" Mode="In" />
+    <Parameter Name="parVc1" Type="varchar" Mode="In" />
+    <Parameter Name="parVc2" Type="varchar" Mode="In" />
+    <Parameter Name="parVc3" Type="varchar" Mode="In" />
+    <Parameter Name="parVc4" Type="varchar" Mode="In" />
+    <Parameter Name="parVc5" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spRelNotaMedicaDiagSecNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spRelPersonalEspecialidadNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdPersonal" Type="int" Mode="In" />
+    <Parameter Name="bActivo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblAccesoExpedienteNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdAccesoExpediente" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="dtFechaInicial" Type="varchar" Mode="In" />
+    <Parameter Name="dtFechaFinal" Type="varchar" Mode="In" />
+    <Parameter Name="iEstatus" Type="int" Mode="In" />
+    <Parameter Name="vcComentarios" Type="varchar" Mode="In" />
+    <Parameter Name="IdUsuarioGenero" Type="int" Mode="In" />
+    <Parameter Name="dtFecha" Type="varchar" Mode="In" />
+    <Parameter Name="vcFullNumeroSocio" Type="varchar" Mode="In" />
+    <Parameter Name="vcNumeroExpediente" Type="varchar" Mode="In" />
+    <Parameter Name="bAlDiaActual" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spTblAgendaCitaNM_ByCitados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdEstatusCita" Type="int" Mode="In" />
+    <Parameter Name="dtFehcaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="dtFechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="IdUsuarioGenera" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblAgendaCitaNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdAgendaCita" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="vcNumeroSocio" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombreSocio" Type="varchar" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="vcCodigoMedico" Type="varchar" Mode="In" />
+    <Parameter Name="vcNombreMedico" Type="varchar" Mode="In" />
+    <Parameter Name="dtFechaDesde" Type="varchar" Mode="In" />
+    <Parameter Name="dtHoraDesde" Type="varchar" Mode="In" />
+    <Parameter Name="dtFechaHasta" Type="varchar" Mode="In" />
+    <Parameter Name="dtHoraHasta" Type="varchar" Mode="In" />
+    <Parameter Name="iBloque" Type="int" Mode="In" />
+    <Parameter Name="iNumeroBloques" Type="int" Mode="In" />
+    <Parameter Name="bCitaExtra" Type="int" Mode="In" />
+    <Parameter Name="IdEstatusCita" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblAlergiaPacienteGridNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdAlergiaPaciente" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblHojaFrontalNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdHojaFrontal" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdCategoria" Type="int" Mode="In" />
+    <Parameter Name="dtFechaRegistro" Type="varchar" Mode="In" />
+    <Parameter Name="IdEspecialidadRegistro" Type="int" Mode="In" />
+    <Parameter Name="bTerminado" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidadTermino" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoRegistro" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoTermino" Type="int" Mode="In" />
+    <Parameter Name="dtFechaTermino" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sptblHojaFrontalNM_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdHojaFrontal" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdCategoria" Type="int" Mode="In" />
+    <Parameter Name="IdDescripcion" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidadRegistro" Type="int" Mode="In" />
+    <Parameter Name="bTerminado" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidadTermino" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoRegistro" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoTermino" Type="int" Mode="In" />
+    <Parameter Name="IdCancerTamano" Type="int" Mode="In" />
+    <Parameter Name="IdCancerNodulo" Type="int" Mode="In" />
+    <Parameter Name="IdCancerMetastasis" Type="int" Mode="In" />
+    <Parameter Name="IdEtapaClinica" Type="int" Mode="In" />
+    <Parameter Name="IdGradoLinfoma" Type="int" Mode="In" />
+    <Parameter Name="IdEstatusCancer" Type="int" Mode="In" />
+    <Parameter Name="vcOperacion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sptblInformacionPerinatalNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdInformacionPerinatal" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoRegisto" Type="int" Mode="In" />
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblInterconsultaNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdInterconsulta" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+    <Parameter Name="IdIngresoHospital" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblInterconsultaNM_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdInterconsulta" Type="int" Mode="In" />
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidadSolicita" Type="int" Mode="In" />
+    <Parameter Name="IdPrioridad" Type="int" Mode="In" />
+    <Parameter Name="IdEstatusInterconsulta" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoSolicitante" Type="int" Mode="In" />
+    <Parameter Name="IdMedicoSolicitado" Type="int" Mode="In" />
+    <Parameter Name="dtFechaTentativa" Type="varchar" Mode="In" />
+    <Parameter Name="vcMotivoInterconsulta" Type="varchar" Mode="In" />
+    <Parameter Name="IdEspecialidadInterconsulta" Type="int" Mode="In" />
+    <Parameter Name="IdIngresoHospital" Type="int" Mode="In" />
+    <Parameter Name="IdEventoAseguradora" Type="int" Mode="In" />
+    <Parameter Name="vcOperacion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sptblNotaGinecobstetricaNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNotaGinecobstetrica" Type="int" Mode="In" />
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblNotaMedicaByIdNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblNotaMedicaNM_Edit_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdAgendaCita" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblNotaMedicaNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="IdNotaMedica" Type="int" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="int" Mode="In" />
+    <Parameter Name="IdMedico" Type="int" Mode="In" />
+    <Parameter Name="IdEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="IdDiagnosticoPrincipal" Type="int" Mode="In" />
+    <Parameter Name="bRequiereUrgencias" Type="int" Mode="In" />
+    <Parameter Name="bNotaIngresoHospital" Type="int" Mode="In" />
+    <Parameter Name="IdTipoDiagnostico" Type="int" Mode="In" />
+    <Parameter Name="IdAgendaCita" Type="int" Mode="In" />
+    <Parameter Name="IdDependencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sptblSesionUsuarioNM_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="vcUsuarioRed" Type="varchar" Mode="In" />
+    <Parameter Name="IdArea" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sptblSesionUsuarioNM_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="vcUsuarioRed" Type="varchar" Mode="In" />
+    <Parameter Name="IdNumeroSocio" Type="numeric" Mode="In" />
+    <Parameter Name="IdNotaMedica" Type="numeric" Mode="In" />
+    <Parameter Name="IdNotaEnfermeria" Type="numeric" Mode="In" />
+    <Parameter Name="IdIngresoHospital" Type="numeric" Mode="In" />
+    <Parameter Name="IdIngresoPaciente" Type="numeric" Mode="In" />
+    <Parameter Name="IdArea" Type="varchar" Mode="In" />
+    <Parameter Name="IdAgendaCita" Type="numeric" Mode="In" />
+    <Parameter Name="vcOperacion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spTerminarInterconsultaNM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="NotaMedica">
+    <Parameter Name="idEspecialidad" Type="int" Mode="In" />
+    <Parameter Name="idPaciente" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Nova_ServiciosMedicosModel1StoreContainer" />
+</Schema>

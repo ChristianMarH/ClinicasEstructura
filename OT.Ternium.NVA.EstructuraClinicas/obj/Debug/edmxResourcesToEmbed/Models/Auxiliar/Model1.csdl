@@ -1,0 +1,954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Nova_ServiciosMedicosModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="spAM_AgendaCitaServiciosNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.spAM_AgendaCitaServiciosNM_Select_Result)">
+      <Parameter Name="IdAgendaCita" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spAMNM_BusquedaMedico" ReturnType="Collection(Nova_ServiciosMedicosModel1.spAMNM_BusquedaMedico_Result)">
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="ClaveMedico" Mode="In" Type="String" />
+      <Parameter Name="vcNombreMedico" Mode="In" Type="String" />
+      <Parameter Name="bSistemaActivo" Mode="In" Type="Int32" />
+      <Parameter Name="dtFecha" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spAuxNM_Fechas_horas" ReturnType="Collection(Nova_ServiciosMedicosModel1.spAuxNM_Fechas_horas_Result)" />
+    <FunctionImport Name="spCatAsociadoNM_ByIdNumeroSocio" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatAsociadoNM_ByIdNumeroSocio_Result)">
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatAsociadoNM_MedicoCombo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatAsociadoNM_MedicoCombo_Result)">
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="vcFullNumeroSocio" Mode="In" Type="String" />
+      <Parameter Name="vcNombreSocio" Mode="In" Type="String" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="IdUsuarioGenera" Mode="In" Type="Int32" />
+      <Parameter Name="bCitado" Mode="In" Type="Int32" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatAsociadoNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatAsociadoNM_Select_Result)">
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="NumeroAfiliado" Mode="In" Type="Decimal" />
+      <Parameter Name="vcAfiliado" Mode="In" Type="String" />
+      <Parameter Name="vcTelefono" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="vcDomicilio" Mode="In" Type="String" />
+      <Parameter Name="IdColonia" Mode="In" Type="Int32" />
+      <Parameter Name="IdAseguradora" Mode="In" Type="Int32" />
+      <Parameter Name="vcPoliza" Mode="In" Type="String" />
+      <Parameter Name="iNoPoliza" Mode="In" Type="Int32" />
+      <Parameter Name="dtInicio" Mode="In" Type="String" />
+      <Parameter Name="dtFinal" Mode="In" Type="String" />
+      <Parameter Name="vcCurp" Mode="In" Type="String" />
+      <Parameter Name="IdInstitucional" Mode="In" Type="Int32" />
+      <Parameter Name="vcApellidoPaterno" Mode="In" Type="String" />
+      <Parameter Name="vcApellidoMaterno" Mode="In" Type="String" />
+      <Parameter Name="vcNombre" Mode="In" Type="String" />
+      <Parameter Name="IdSexo" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstadoCivil" Mode="In" Type="Int32" />
+      <Parameter Name="dtFechaNacimiento" Mode="In" Type="String" />
+      <Parameter Name="IdTipoSangre" Mode="In" Type="Int32" />
+      <Parameter Name="bConfidencial" Mode="In" Type="Int32" />
+      <Parameter Name="bRequiereEmpresa" Mode="In" Type="Int32" />
+      <Parameter Name="bReqExpedienteFisico" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoFamiliar" Mode="In" Type="Int32" />
+      <Parameter Name="IdClasificacionAfiliado" Mode="In" Type="Int32" />
+      <Parameter Name="idTitular" Mode="In" Type="Int32" />
+      <Parameter Name="vcReferencias" Mode="In" Type="String" />
+      <Parameter Name="vcCodigoPostal" Mode="In" Type="String" />
+      <Parameter Name="vcTelefono2" Mode="In" Type="String" />
+      <Parameter Name="IdTipoAfiliado" Mode="In" Type="Int32" />
+      <Parameter Name="dtFechaInicio" Mode="In" Type="String" />
+      <Parameter Name="dtFechaTermino" Mode="In" Type="String" />
+      <Parameter Name="vcContratante" Mode="In" Type="String" />
+      <Parameter Name="iNumeroCertificado" Mode="In" Type="Int32" />
+      <Parameter Name="IdEmpresa" Mode="In" Type="Int32" />
+      <Parameter Name="vcNombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="vcNumeroAfiliadoFull" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spCatCategoriaHojaFrontalNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatCategoriaHojaFrontalNM_Combo_Result)">
+      <Parameter Name="IdCategoriaHojaFrontal" Mode="In" Type="Int32" />
+      <Parameter Name="vcCategoriaHojaFrontal" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatControlFertilidadNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatControlFertilidadNM_Combo_Result)">
+      <Parameter Name="IdControlFertilidad" Mode="In" Type="Int32" />
+      <Parameter Name="vcControlFertilidad" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatDiagnosticoNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatDiagnosticoNM_Combo_Result)">
+      <Parameter Name="IdDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="vcDiagnostico" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatDismenorreaNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatDismenorreaNM_Combo_Result)">
+      <Parameter Name="IdDismenorrea" Mode="In" Type="Int32" />
+      <Parameter Name="vcDismenorrea" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatEspecialidadNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatEspecialidadNM_Combo_Result)">
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="vcEspecialidad" Mode="In" Type="String" />
+      <Parameter Name="vcCodigoEspecialidad" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatEspecialidadNM_MedicoCombo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatEspecialidadNM_MedicoCombo_Result)">
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="vcEspecialidad" Mode="In" Type="String" />
+      <Parameter Name="vcCodigoEspecialidad" Mode="In" Type="String" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="IdUsuarioGenera" Mode="In" Type="Int32" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatEstatusCitaNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatEstatusCitaNM_Combo_Result)">
+      <Parameter Name="IdEstatusCita" Mode="In" Type="Int32" />
+      <Parameter Name="vcEstatusCita" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatEstatusInterconsultaNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatEstatusInterconsultaNM_Combo_Result)">
+      <Parameter Name="Identificador" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatPersonalNM_ByLogin" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatPersonalNM_ByLogin_Result)">
+      <Parameter Name="vcCodigoUsuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spCatPersonalNM_Medico" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatPersonalNM_Medico_Result)">
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="vcCodigoMedico" Mode="In" Type="String" />
+      <Parameter Name="vcNombreMedico" Mode="In" Type="String" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipoMedico" Mode="In" Type="Int32" />
+      <Parameter Name="IdUnidadMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdAreaTrabajo" Mode="In" Type="Int32" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatPersonalNM_MedicoCombo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatPersonalNM_MedicoCombo_Result)">
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="vcCodigoMedico" Mode="In" Type="String" />
+      <Parameter Name="vcNombreMedico" Mode="In" Type="String" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipoMedico" Mode="In" Type="Int32" />
+      <Parameter Name="IdUnidadMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdAreaTrabajo" Mode="In" Type="Int32" />
+      <Parameter Name="IdUsuarioGenera" Mode="In" Type="Int32" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatPrioridadNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatPrioridadNM_Combo_Result)">
+      <Parameter Name="Identificador" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatProblemaNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatProblemaNM_Combo_Result)">
+      <Parameter Name="IdProblema" Mode="In" Type="Int32" />
+      <Parameter Name="vcProblema" Mode="In" Type="String" />
+      <Parameter Name="IdTipoProblema" Mode="In" Type="Int32" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatPronosticoMedicoNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatPronosticoMedicoNM_Combo_Result)">
+      <Parameter Name="IdPronosticoMedico" Mode="In" Type="Int32" />
+      <Parameter Name="vcPronosticoMedico" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatTipoAfiliadoNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatTipoAfiliadoNM_Combo_Result)">
+      <Parameter Name="IdTipoAfiliado" Mode="In" Type="Int32" />
+      <Parameter Name="vcTipoAfiliado" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCatTipoDiagnosticoNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCatTipoDiagnosticoNM_Combo_Result)">
+      <Parameter Name="IdTipoDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="vcTipoDiagnostico" Mode="In" Type="String" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCldCatConfiguracionCalidadNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCldCatConfiguracionCalidadNM_Select_Result)">
+      <Parameter Name="IdVariable" Mode="In" Type="Decimal" />
+      <Parameter Name="vcDescripcion" Mode="In" Type="String" />
+      <Parameter Name="vcValor" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spCldCatDatoCatalogoNM_Combo" ReturnType="Collection(Nova_ServiciosMedicosModel1.spCldCatDatoCatalogoNM_Combo_Result)">
+      <Parameter Name="IdCatalogoMaestro" Mode="In" Type="Int32" />
+      <Parameter Name="IdDatoCatalogo" Mode="In" Type="Int32" />
+      <Parameter Name="vcCampo" Mode="In" Type="String" />
+      <Parameter Name="vcValor" Mode="In" Type="String" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+      <Parameter Name="bDefault" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spNotaDiabetesNM_InfoGeneral" ReturnType="Collection(Nova_ServiciosMedicosModel1.spNotaDiabetesNM_InfoGeneral_Result)">
+      <Parameter Name="parvcInformacion" Mode="In" Type="String" />
+      <Parameter Name="parId1" Mode="In" Type="Int32" />
+      <Parameter Name="parId2" Mode="In" Type="Int32" />
+      <Parameter Name="parId3" Mode="In" Type="Int32" />
+      <Parameter Name="parId4" Mode="In" Type="Int32" />
+      <Parameter Name="parId5" Mode="In" Type="Int32" />
+      <Parameter Name="parVc1" Mode="In" Type="String" />
+      <Parameter Name="parVc2" Mode="In" Type="String" />
+      <Parameter Name="parVc3" Mode="In" Type="String" />
+      <Parameter Name="parVc4" Mode="In" Type="String" />
+      <Parameter Name="parVc5" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spRelNotaMedicaDiagSecNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.spRelNotaMedicaDiagSecNM_Select_Result)">
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spRelPersonalEspecialidadNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.spRelPersonalEspecialidadNM_Select_Result)">
+      <Parameter Name="IdPersonal" Mode="In" Type="Int32" />
+      <Parameter Name="bActivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblAccesoExpedienteNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblAccesoExpedienteNM_Select_Result)">
+      <Parameter Name="IdAccesoExpediente" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="dtFechaInicial" Mode="In" Type="String" />
+      <Parameter Name="dtFechaFinal" Mode="In" Type="String" />
+      <Parameter Name="iEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="vcComentarios" Mode="In" Type="String" />
+      <Parameter Name="IdUsuarioGenero" Mode="In" Type="Int32" />
+      <Parameter Name="dtFecha" Mode="In" Type="String" />
+      <Parameter Name="vcFullNumeroSocio" Mode="In" Type="String" />
+      <Parameter Name="vcNumeroExpediente" Mode="In" Type="String" />
+      <Parameter Name="bAlDiaActual" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spTblAgendaCitaNM_ByCitados" ReturnType="Collection(Nova_ServiciosMedicosModel1.spTblAgendaCitaNM_ByCitados_Result)">
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstatusCita" Mode="In" Type="Int32" />
+      <Parameter Name="dtFehcaInicio" Mode="In" Type="String" />
+      <Parameter Name="dtFechaFin" Mode="In" Type="String" />
+      <Parameter Name="IdUsuarioGenera" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblAgendaCitaNM_Select">
+      <Parameter Name="IdAgendaCita" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="vcNumeroSocio" Mode="In" Type="String" />
+      <Parameter Name="vcNombreSocio" Mode="In" Type="String" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="vcCodigoMedico" Mode="In" Type="String" />
+      <Parameter Name="vcNombreMedico" Mode="In" Type="String" />
+      <Parameter Name="dtFechaDesde" Mode="In" Type="String" />
+      <Parameter Name="dtHoraDesde" Mode="In" Type="String" />
+      <Parameter Name="dtFechaHasta" Mode="In" Type="String" />
+      <Parameter Name="dtHoraHasta" Mode="In" Type="String" />
+      <Parameter Name="iBloque" Mode="In" Type="Int32" />
+      <Parameter Name="iNumeroBloques" Mode="In" Type="Int32" />
+      <Parameter Name="bCitaExtra" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstatusCita" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblAlergiaPacienteGridNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblAlergiaPacienteGridNM_Select_Result)">
+      <Parameter Name="IdAlergiaPaciente" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblHojaFrontalNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblHojaFrontalNM_Select_Result)">
+      <Parameter Name="IdHojaFrontal" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="dtFechaRegistro" Mode="In" Type="String" />
+      <Parameter Name="IdEspecialidadRegistro" Mode="In" Type="Int32" />
+      <Parameter Name="bTerminado" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidadTermino" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoRegistro" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoTermino" Mode="In" Type="Int32" />
+      <Parameter Name="dtFechaTermino" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sptblHojaFrontalNM_Update" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblHojaFrontalNM_Update_Result)">
+      <Parameter Name="IdHojaFrontal" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="IdDescripcion" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidadRegistro" Mode="In" Type="Int32" />
+      <Parameter Name="bTerminado" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidadTermino" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoRegistro" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoTermino" Mode="In" Type="Int32" />
+      <Parameter Name="IdCancerTamano" Mode="In" Type="Int32" />
+      <Parameter Name="IdCancerNodulo" Mode="In" Type="Int32" />
+      <Parameter Name="IdCancerMetastasis" Mode="In" Type="Int32" />
+      <Parameter Name="IdEtapaClinica" Mode="In" Type="Int32" />
+      <Parameter Name="IdGradoLinfoma" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstatusCancer" Mode="In" Type="Int32" />
+      <Parameter Name="vcOperacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sptblInformacionPerinatalNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblInformacionPerinatalNM_Select_Result)">
+      <Parameter Name="IdInformacionPerinatal" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoRegisto" Mode="In" Type="Int32" />
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblInterconsultaNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblInterconsultaNM_Select_Result)">
+      <Parameter Name="IdInterconsulta" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdIngresoHospital" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblInterconsultaNM_Update" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblInterconsultaNM_Update_Result)">
+      <Parameter Name="IdInterconsulta" Mode="In" Type="Int32" />
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidadSolicita" Mode="In" Type="Int32" />
+      <Parameter Name="IdPrioridad" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstatusInterconsulta" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoSolicitante" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedicoSolicitado" Mode="In" Type="Int32" />
+      <Parameter Name="dtFechaTentativa" Mode="In" Type="String" />
+      <Parameter Name="vcMotivoInterconsulta" Mode="In" Type="String" />
+      <Parameter Name="IdEspecialidadInterconsulta" Mode="In" Type="Int32" />
+      <Parameter Name="IdIngresoHospital" Mode="In" Type="Int32" />
+      <Parameter Name="IdEventoAseguradora" Mode="In" Type="Int32" />
+      <Parameter Name="vcOperacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sptblNotaGinecobstetricaNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblNotaGinecobstetricaNM_Select_Result)">
+      <Parameter Name="IdNotaGinecobstetrica" Mode="In" Type="Int32" />
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblNotaMedicaByIdNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblNotaMedicaByIdNM_Select_Result)">
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblNotaMedicaNM_Edit_Select" ReturnType="Collection(Int32)">
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdAgendaCita" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblNotaMedicaNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblNotaMedicaNM_Select_Result)">
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Int32" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Int32" />
+      <Parameter Name="IdMedico" Mode="In" Type="Int32" />
+      <Parameter Name="IdEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdDiagnosticoPrincipal" Mode="In" Type="Int32" />
+      <Parameter Name="bRequiereUrgencias" Mode="In" Type="Int32" />
+      <Parameter Name="bNotaIngresoHospital" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipoDiagnostico" Mode="In" Type="Int32" />
+      <Parameter Name="IdAgendaCita" Mode="In" Type="Int32" />
+      <Parameter Name="IdDependencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sptblSesionUsuarioNM_Select" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblSesionUsuarioNM_Select_Result)">
+      <Parameter Name="vcUsuarioRed" Mode="In" Type="String" />
+      <Parameter Name="IdArea" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sptblSesionUsuarioNM_Update" ReturnType="Collection(Nova_ServiciosMedicosModel1.sptblSesionUsuarioNM_Update_Result)">
+      <Parameter Name="vcUsuarioRed" Mode="In" Type="String" />
+      <Parameter Name="IdNumeroSocio" Mode="In" Type="Decimal" />
+      <Parameter Name="IdNotaMedica" Mode="In" Type="Decimal" />
+      <Parameter Name="IdNotaEnfermeria" Mode="In" Type="Decimal" />
+      <Parameter Name="IdIngresoHospital" Mode="In" Type="Decimal" />
+      <Parameter Name="IdIngresoPaciente" Mode="In" Type="Decimal" />
+      <Parameter Name="IdArea" Mode="In" Type="String" />
+      <Parameter Name="IdAgendaCita" Mode="In" Type="Decimal" />
+      <Parameter Name="vcOperacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spTerminarInterconsultaNM" ReturnType="Collection(Nova_ServiciosMedicosModel1.spTerminarInterconsultaNM_Result)">
+      <Parameter Name="idEspecialidad" Mode="In" Type="Int32" />
+      <Parameter Name="idPaciente" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spAM_AgendaCitaServiciosNM_Select_Result">
+    <Property Type="Int32" Name="IdAgendaCita" Nullable="true" />
+    <Property Type="Int32" Name="IdSesion" Nullable="true" />
+    <Property Type="String" Name="DescripcionServicios" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spAMNM_BusquedaMedico_Result">
+    <Property Type="Int32" Name="IdMedico" Nullable="true" />
+    <Property Type="String" Name="vcClaveMedico" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="vcNombreMedico" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="vcClaveNombreMedico" Nullable="true" MaxLength="400" />
+    <Property Type="Boolean" Name="bSistemaActivo" Nullable="true" />
+    <Property Type="String" Name="vcSistemaActivo" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="spAuxNM_Fechas_horas_Result">
+    <Property Type="Int32" Name="iCero" Nullable="false" />
+    <Property Type="Int32" Name="INegativo" Nullable="false" />
+    <Property Type="Int32" Name="IPositivo" Nullable="false" />
+    <Property Type="String" Name="strEmpty" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="vcFechaActual" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcFechaInicialMes" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcFechaFinalMes" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcFechaAñoInicial" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcFechaAñoFinal" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcHora" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="spCatAsociadoNM_ByIdNumeroSocio_Result">
+    <Property Type="String" Name="vcNumeroExpediente" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="true" MaxLength="16" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="false" />
+    <Property Type="Int32" Name="iNumeroAfiliado" Nullable="true" />
+    <Property Type="String" Name="vcAfiliado" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcTelefono" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="bActivo" Nullable="true" />
+    <Property Type="String" Name="vcDomicilio" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdColonia" Nullable="false" />
+    <Property Type="String" Name="vcColonia" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdAseguradora" Nullable="false" />
+    <Property Type="String" Name="vcAseguradora" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="vcPoliza" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="iNoPoliza" Nullable="false" />
+    <Property Type="String" Name="dtInicio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFinal" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcCurp" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdInstitucional" Nullable="false" />
+    <Property Type="String" Name="vcInstitucional" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="vcApellidoPaterno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcApellidoMaterno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcNombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="true" MaxLength="304" />
+    <Property Type="Int32" Name="IdSexo" Nullable="false" />
+    <Property Type="String" Name="vcSexo" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="IdEstadoCivil" Nullable="false" />
+    <Property Type="String" Name="vcEstadoCivil" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="dtFechaNacimiento" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="IdTipoSangre" Nullable="false" />
+    <Property Type="String" Name="vcTipoSangre" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bConfidencial" Nullable="true" />
+    <Property Type="Int32" Name="bRequiereEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="bReqExpedienteFisico" Nullable="true" />
+    <Property Type="Int32" Name="IdMedicoFamiliar" Nullable="false" />
+    <Property Type="String" Name="vcMedicoFamiliar" Nullable="true" MaxLength="304" />
+    <Property Type="Int32" Name="IdClasificacionAfiliado" Nullable="false" />
+    <Property Type="String" Name="vcClasificacionAfiliado" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdTitular" Nullable="false" />
+    <Property Type="String" Name="vcTitular" Nullable="true" MaxLength="304" />
+    <Property Type="String" Name="vcReferencias" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcCodigoPostal" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="vcTelefono2" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="IdTipoAfiliado" Nullable="false" />
+    <Property Type="String" Name="vcTipoAfiliado" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="dtFechaInicio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFechaTermino" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcContratante" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="iNumeroCertificado" Nullable="false" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+    <Property Type="String" Name="vcEmpresa" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcNumeroSocio" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="vcClaveFamiliar" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="vcNumeroTernium" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="vcEdad" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdReligion" Nullable="false" />
+    <Property Type="String" Name="vcReligion" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdNacionalidad" Nullable="false" />
+    <Property Type="String" Name="vcNacionalidad" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bTitularPersona" Nullable="true" />
+    <Property Type="Int32" Name="IdEstadoNacimiento" Nullable="false" />
+    <Property Type="String" Name="vcEstadoNacimiento" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcNombreContacto" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcDireccionContacto" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdColoniaContacto" Nullable="false" />
+    <Property Type="String" Name="vcColoniaContacto" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="iCodigoPostalContacto" Nullable="false" />
+    <Property Type="String" Name="vcTelefonoContacto" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="IdEscolaridad" Nullable="false" />
+    <Property Type="String" Name="vcEscolaridad" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdOcupacion" Nullable="false" />
+    <Property Type="String" Name="vcOcupacion" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcPuesto" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdUnidad" Nullable="false" />
+    <Property Type="String" Name="vcUnidad" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bServicioSuspendido" Nullable="true" />
+    <Property Type="String" Name="vcClavePaciente" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="vcCorreoElectronico" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="vcCorreoContacto" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="vcTelefono2Contacto" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="vcMovilContacto" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="vcTelefonoMovil" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="spCatAsociadoNM_MedicoCombo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="spCatAsociadoNM_Select_Result">
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="false" />
+    <Property Type="String" Name="vcNumeroExpediente" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="true" MaxLength="16" />
+    <Property Type="Decimal" Name="iNumeroAfiliado" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="vcAfiliado" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcTelefono" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="bActivo" Nullable="true" />
+    <Property Type="String" Name="vcActivo" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="vcDomicilio" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdColonia" Nullable="true" />
+    <Property Type="String" Name="vcColonia" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="idCiudad" Nullable="true" />
+    <Property Type="String" Name="vcCiudad" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="idEstado" Nullable="true" />
+    <Property Type="String" Name="vcEstado" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdAseguradora" Nullable="true" />
+    <Property Type="String" Name="vcAseguradora" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcPoliza" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="iNoPoliza" Nullable="true" />
+    <Property Type="String" Name="dtInicio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFinal" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcCurp" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdInstitucional" Nullable="true" />
+    <Property Type="String" Name="vcInstitucional" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="vcApellidoPaterno" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcApellidoMaterno" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="true" MaxLength="303" />
+    <Property Type="Int32" Name="IdSexo" Nullable="true" />
+    <Property Type="String" Name="vcSexo" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="IdEstadoCivil" Nullable="true" />
+    <Property Type="String" Name="vcEstadoCivil" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="dtFechaNacimiento" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="IdTipoSangre" Nullable="true" />
+    <Property Type="String" Name="vcTipoSangre" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bConfidencial" Nullable="true" />
+    <Property Type="Int32" Name="bRequiereEmpresa" Nullable="true" />
+    <Property Type="Int32" Name="bReqExpedienteFisico" Nullable="true" />
+    <Property Type="Int32" Name="IdMedicoFamiliar" Nullable="true" />
+    <Property Type="String" Name="vcMedicoFamiliar" Nullable="true" MaxLength="303" />
+    <Property Type="Int32" Name="IdClasificacionAfiliado" Nullable="false" />
+    <Property Type="String" Name="vcClasificacionAfiliado" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="idTitular" Nullable="true" />
+    <Property Type="String" Name="vcReferencias" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcCodigoPostal" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="vcTelefono2" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="IdTipoAfiliado" Nullable="true" />
+    <Property Type="String" Name="vcTipoAfiliado" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="dtFechaInicio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFechaTermino" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcContratante" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="iNumeroCertificado" Nullable="true" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+    <Property Type="String" Name="vcNombreEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="idEstadoEmpresa" Nullable="true" />
+    <Property Type="String" Name="vcEstadoEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="idCiudadEmpresa" Nullable="true" />
+    <Property Type="String" Name="vcCiudadEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="idColoniaEmpresa" Nullable="false" />
+    <Property Type="String" Name="vcColoniaEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcDireccionEmpresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcCodigoPostalEmpresa" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcTelefonoEmpresa" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="vcTitular" Nullable="true" MaxLength="304" />
+    <Property Type="String" Name="vcCorreoElectronico" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="spCatCategoriaHojaFrontalNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatControlFertilidadNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatDiagnosticoNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="spCatDismenorreaNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatEspecialidadNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatEspecialidadNM_MedicoCombo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatEstatusCitaNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatEstatusInterconsultaNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatPersonalNM_ByLogin_Result">
+    <Property Type="String" Name="vcCodigoUsuario" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdPersonal" Nullable="false" />
+    <Property Type="String" Name="vcNombrePersonal" Nullable="true" MaxLength="368" />
+  </ComplexType>
+  <ComplexType Name="spCatPersonalNM_Medico_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="spCatPersonalNM_MedicoCombo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="spCatPrioridadNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatProblemaNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatPronosticoMedicoNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatTipoAfiliadoNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCatTipoDiagnosticoNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCldCatConfiguracionCalidadNM_Select_Result">
+    <Property Type="Int32" Name="IdVariable" Nullable="false" />
+    <Property Type="String" Name="vcDescripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcValor" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCldCatDatoCatalogoNM_Combo_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="spNotaDiabetesNM_InfoGeneral_Result">
+    <Property Type="Int32" Name="OUT_ID" Nullable="false" />
+    <Property Type="Int32" Name="OUT_c_mensaje" Nullable="false" />
+    <Property Type="String" Name="OUT_d_mensaje" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="OUT_MsgError" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spRelNotaMedicaDiagSecNM_Select_Result">
+    <Property Type="Int32" Name="IdNotaMedica" Nullable="false" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="Int32" Name="IdDiagnostico" Nullable="false" />
+    <Property Type="String" Name="vcDiagnostico" Nullable="false" MaxLength="1000" />
+    <Property Type="Int32" Name="IdTipoDiagnostico" Nullable="true" />
+    <Property Type="String" Name="vcTipoDiagnositico" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spRelPersonalEspecialidadNM_Select_Result">
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="String" Name="vcEspecialidad" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdPersonal" Nullable="true" />
+    <Property Type="Int32" Name="IdTipoConsulta" Nullable="true" />
+    <Property Type="String" Name="vcTipoConsulta" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdServicio" Nullable="true" />
+    <Property Type="String" Name="vcServicio" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="bActivo" Nullable="true" />
+    <Property Type="String" Name="vcCedulaEspecialidad" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdEntidad" Nullable="true" />
+    <Property Type="String" Name="vcEntidad" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdUniversidad" Nullable="true" />
+    <Property Type="String" Name="vcUniversidad" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdPrioridad" Nullable="true" />
+    <Property Type="Int32" Name="idDependencia" Nullable="true" />
+    <Property Type="String" Name="vcDependencia" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sptblAccesoExpedienteNM_Select_Result">
+    <Property Type="Int32" Name="IdAccesoExpediente" Nullable="false" />
+    <Property Type="String" Name="vcNumeroExpediente" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="false" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="IdMedico" Nullable="false" />
+    <Property Type="String" Name="vcMedico" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="dtFechaInicial" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="dtFechaFinal" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="iEstatus" Nullable="false" />
+    <Property Type="String" Name="asvcEstatus" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="asvcComentarios" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="asIdUsuarioGenero" Nullable="false" />
+    <Property Type="String" Name="vcUsuarioGenero" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="dtFecha" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="spTblAgendaCitaNM_ByCitados_Result">
+    <Property Type="Int32" Name="IdAgendaCita" Nullable="true" />
+    <Property Type="String" Name="vcNumeroExpediente" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="Int32" Name="iNumeroAfiliado" Nullable="true" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="true" MaxLength="330" />
+    <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+    <Property Type="String" Name="vcEmpresa" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="IdMedico" Nullable="true" />
+    <Property Type="String" Name="vcMedico" Nullable="true" MaxLength="330" />
+    <Property Type="String" Name="dtFecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcHora" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="IdEstatusCita" Nullable="true" />
+    <Property Type="String" Name="vcEstatusCita" Nullable="true" MaxLength="102" />
+    <Property Type="String" Name="vcSexo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="vcEdad" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdSucursal" Nullable="true" />
+    <Property Type="String" Name="vcSucursal" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sptblAlergiaPacienteGridNM_Select_Result">
+    <Property Type="Int32" Name="IdAlergiaPaciente" Nullable="false" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="String" Name="vcNombrePaciente" Nullable="true" MaxLength="302" />
+    <Property Type="Int32" Name="IdAlergia" Nullable="true" />
+    <Property Type="String" Name="vcAlergia" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdTipoAlergia" Nullable="true" />
+    <Property Type="String" Name="vcTipoAlergia" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="vcDescripcionTipo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdSal" Nullable="true" />
+    <Property Type="String" Name="vcSal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bActivo" Nullable="true" />
+    <Property Type="String" Name="vcActivo" Nullable="false" MaxLength="8" />
+    <Property Type="Int32" Name="IdUsuarioCreacion" Nullable="true" />
+    <Property Type="String" Name="vcUsuarioCreacion" Nullable="true" MaxLength="302" />
+    <Property Type="String" Name="dtFechaCreacion" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="dtHoraCreacion" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="sptblHojaFrontalNM_Select_Result">
+    <Property Type="Int32" Name="IdHojaFrontal" Nullable="false" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="false" />
+    <Property Type="Int32" Name="IdCategoria" Nullable="false" />
+    <Property Type="String" Name="vcCategoria" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdDescripcion" Nullable="false" />
+    <Property Type="String" Name="vcDescripcion" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="IdDiagnostico" Nullable="false" />
+    <Property Type="String" Name="vcDiagnostico" Nullable="false" MaxLength="1000" />
+    <Property Type="Int32" Name="IdProblema" Nullable="false" />
+    <Property Type="String" Name="vcProblema" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="dtFechaRegistro" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtHoraRegistro" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="IdEspecialidadRegistro" Nullable="false" />
+    <Property Type="String" Name="vcEspecialidadRegistro" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bTerminado" Nullable="true" />
+    <Property Type="String" Name="vcTerminado" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="dtFechaTermino" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtHoraTermino" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="IdEspecialidadTermino" Nullable="false" />
+    <Property Type="String" Name="vcEspecialidadTermino" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdMedicoRegistro" Nullable="false" />
+    <Property Type="String" Name="vcMedicoRegistro" Nullable="true" MaxLength="304" />
+    <Property Type="Int32" Name="IdMedicoTermino" Nullable="false" />
+    <Property Type="String" Name="vcMedicoTermino" Nullable="true" MaxLength="304" />
+    <Property Type="String" Name="vcEstadioCancer" Nullable="false" MaxLength="1231" />
+  </ComplexType>
+  <ComplexType Name="sptblHojaFrontalNM_Update_Result">
+    <Property Type="Int32" Name="Identificador" Nullable="true" />
+    <Property Type="Int32" Name="Identificador1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sptblInformacionPerinatalNM_Select_Result">
+    <Property Type="Int32" Name="IdInformacionPerinatal" Nullable="false" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="Int32" Name="IdMedicoRegisto" Nullable="true" />
+    <Property Type="Int32" Name="IdNotaMedica" Nullable="true" />
+    <Property Type="String" Name="dtFechaRegistro" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="bAO1" Nullable="true" />
+    <Property Type="Int32" Name="bAO2" Nullable="true" />
+    <Property Type="Int32" Name="bAO3" Nullable="true" />
+    <Property Type="Int32" Name="bAO4" Nullable="true" />
+    <Property Type="Int32" Name="bAO5" Nullable="true" />
+    <Property Type="Int32" Name="bAO6" Nullable="true" />
+    <Property Type="Int32" Name="bAO7" Nullable="true" />
+    <Property Type="Int32" Name="bAO8" Nullable="true" />
+    <Property Type="Int32" Name="bAO9" Nullable="true" />
+    <Property Type="Int32" Name="bEA1" Nullable="true" />
+    <Property Type="Int32" Name="bEA2" Nullable="true" />
+    <Property Type="Int32" Name="bEA3" Nullable="true" />
+    <Property Type="Int32" Name="bEA4" Nullable="true" />
+    <Property Type="Int32" Name="bEA5" Nullable="true" />
+    <Property Type="Int32" Name="bEA6" Nullable="true" />
+    <Property Type="Int32" Name="bEA7" Nullable="true" />
+    <Property Type="Int32" Name="bEA8" Nullable="true" />
+    <Property Type="Int32" Name="bEA9" Nullable="true" />
+    <Property Type="Int32" Name="bEA10" Nullable="true" />
+    <Property Type="Int32" Name="bEA11" Nullable="true" />
+    <Property Type="Int32" Name="bEA12" Nullable="true" />
+    <Property Type="Int32" Name="bEA13" Nullable="true" />
+    <Property Type="Int32" Name="bHC1" Nullable="true" />
+    <Property Type="Int32" Name="bHC2" Nullable="true" />
+    <Property Type="Int32" Name="bHC3" Nullable="true" />
+    <Property Type="Int32" Name="bHC4" Nullable="true" />
+    <Property Type="Int32" Name="bHC5" Nullable="true" />
+    <Property Type="Int32" Name="bHC6" Nullable="true" />
+    <Property Type="Int32" Name="bHC7" Nullable="true" />
+    <Property Type="Int32" Name="bHC8" Nullable="true" />
+    <Property Type="Int32" Name="bHC9" Nullable="true" />
+    <Property Type="Int32" Name="bHC10" Nullable="true" />
+    <Property Type="String" Name="vcComentario_AO1" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO2" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO3" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO4" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO5" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO6" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO7" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO8" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_AO9" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA1" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA2" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA3" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA4" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA5" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA6" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA7" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA8" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA9" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA10" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA11" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA12" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_EA13" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC1" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC2" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC3" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC4" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC5" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC6" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC7" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC8" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC9" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vcComentario_HC10" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="bAltoRiesgo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sptblInterconsultaNM_Select_Result">
+    <Property Type="Int32" Name="IdInterconsulta" Nullable="true" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="Int32" Name="IdNotaMedica" Nullable="true" />
+    <Property Type="Int32" Name="IdEspecialidadSolicita" Nullable="true" />
+    <Property Type="String" Name="vcEspecialidadSolicita" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="IdPrioridad" Nullable="true" />
+    <Property Type="String" Name="vcPrioridad" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="IdEstatusInterconsulta" Nullable="true" />
+    <Property Type="String" Name="vcEstatusInterconsulta" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="IdMedicoSolicitante" Nullable="true" />
+    <Property Type="String" Name="vcMedicoSolicitante" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="IdMedicoSolicitado" Nullable="true" />
+    <Property Type="String" Name="vcMedicoSolicitado" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="dtFechaTentativa" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="vcMotivoInterconsulta" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="bAtendida" Nullable="true" />
+    <Property Type="String" Name="vcAtendida" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="IdEspecialidadInterconsulta" Nullable="true" />
+    <Property Type="String" Name="vcEspecialidadInterconsulta" Nullable="true" MaxLength="400" />
+    <Property Type="Int32" Name="IdIngresoHospital" Nullable="true" />
+    <Property Type="Int32" Name="IdEventoAseguradora" Nullable="true" />
+    <Property Type="String" Name="vcEventoAseguradora" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sptblInterconsultaNM_Update_Result">
+    <Property Type="Int32" Name="OUT_ID" Nullable="true" />
+    <Property Type="Int32" Name="OUT_c_mensaje" Nullable="false" />
+    <Property Type="String" Name="OUT_d_mensaje" Nullable="false" />
+    <Property Type="String" Name="OUT_MsgError" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sptblNotaGinecobstetricaNM_Select_Result">
+    <Property Type="Int32" Name="IdNotaGinecobstetrica" Nullable="false" />
+    <Property Type="Int32" Name="iMenarcaAnios" Nullable="true" />
+    <Property Type="Int32" Name="iRitmo1" Nullable="true" />
+    <Property Type="Int32" Name="iRitmo2" Nullable="true" />
+    <Property Type="Int32" Name="IdDismenorrea" Nullable="true" />
+    <Property Type="String" Name="vcDismenorrea" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdControlFertilidad" Nullable="true" />
+    <Property Type="String" Name="vcControlFertilidad" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="iDuranteAnios" Nullable="true" />
+    <Property Type="Int32" Name="iDuranteMeses" Nullable="true" />
+    <Property Type="Int32" Name="iSuspendioAnios" Nullable="true" />
+    <Property Type="Int32" Name="iSuspendioMeses" Nullable="true" />
+    <Property Type="Int32" Name="iIvsa" Nullable="true" />
+    <Property Type="Int32" Name="bVsa" Nullable="true" />
+    <Property Type="Int32" Name="bDispareunia" Nullable="true" />
+    <Property Type="String" Name="dtFUM" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFUA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFUP" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="dtFUC" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="iGesta" Nullable="true" />
+    <Property Type="Int32" Name="iCesareas" Nullable="true" />
+    <Property Type="Int32" Name="iPara" Nullable="true" />
+    <Property Type="Int32" Name="iAbortos" Nullable="true" />
+    <Property Type="Decimal" Name="iPesoPromedio" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="iNacidosVivos" Nullable="true" />
+    <Property Type="Int32" Name="iEctopicos" Nullable="true" />
+    <Property Type="Int32" Name="iObitos" Nullable="true" />
+    <Property Type="String" Name="vcProblemasEmbarazo" Nullable="false" MaxLength="1000" />
+    <Property Type="String" Name="vcComentarios" Nullable="false" MaxLength="1000" />
+    <Property Type="Int32" Name="IdNotaMedica" Nullable="true" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="true" MaxLength="304" />
+    <Property Type="Int32" Name="IdControlFertAnterior" Nullable="true" />
+    <Property Type="String" Name="vcControlFertilidadAnterior" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="iUtilizacionAniosAnterior" Nullable="true" />
+    <Property Type="Int32" Name="iUtilizacionMesesAnterior" Nullable="true" />
+    <Property Type="Int32" Name="iSuspensionAniosAnterior" Nullable="true" />
+    <Property Type="Int32" Name="iSuspensionMesesAnterior" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sptblNotaMedicaByIdNM_Select_Result">
+    <Property Type="Int32" Name="IdNotaMedica" Nullable="false" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="Int32" Name="IdMedico" Nullable="true" />
+    <Property Type="String" Name="dtFechaHora" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="vcSubjetivo" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="vcObjetivo" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="vcAnalisis" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="vcPlan" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="Int32" Name="IdDiagnosticoPrincipal" Nullable="true" />
+    <Property Type="Int32" Name="bRequiereUrgencias" Nullable="true" />
+    <Property Type="Int32" Name="bNotaIngresoHospital" Nullable="true" />
+    <Property Type="String" Name="vcIndicaciones" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="IdTipoDiagnostico" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sptblNotaMedicaNM_Select_Result">
+    <Property Type="Int32" Name="IdNotaMedica" Nullable="false" />
+    <Property Type="Int32" Name="IdNumeroSocio" Nullable="true" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="true" MaxLength="304" />
+    <Property Type="Int32" Name="IdMedico" Nullable="true" />
+    <Property Type="String" Name="vcMedico" Nullable="true" MaxLength="304" />
+    <Property Type="String" Name="dtFecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcHora" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="vcSubjetivo" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="vcObjetivo" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="vcAnalisis" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="vcPlan" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="IdEspecialidad" Nullable="true" />
+    <Property Type="String" Name="vcEspecialidad" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdDiagnosticoPrincipal" Nullable="true" />
+    <Property Type="String" Name="vcDiagnosticoPrincipal" Nullable="false" MaxLength="1000" />
+    <Property Type="Int32" Name="bRequiereUrgencias" Nullable="true" />
+    <Property Type="Int32" Name="bNotaIngresoHospital" Nullable="true" />
+    <Property Type="String" Name="vcIndicaciones" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="IdTipoDiagnostico" Nullable="true" />
+    <Property Type="String" Name="vcTipoDiagnositico" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdAgendaCita" Nullable="true" />
+    <Property Type="Int32" Name="IdDependencia" Nullable="true" />
+    <Property Type="String" Name="vcDependencia" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdCancerTamano" Nullable="false" />
+    <Property Type="Int32" Name="IdCancerNodulo" Nullable="false" />
+    <Property Type="Int32" Name="IdCancerMetastasis" Nullable="false" />
+    <Property Type="Int32" Name="IdEtapaClinica" Nullable="false" />
+    <Property Type="Int32" Name="IdGradoLinfoma" Nullable="false" />
+    <Property Type="Int32" Name="IdEstatusCancer" Nullable="false" />
+    <Property Type="Int32" Name="IdEventoAseguradora" Nullable="false" />
+    <Property Type="String" Name="vcEventoAseguradora" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="IdGradiente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sptblSesionUsuarioNM_Select_Result">
+    <Property Type="String" Name="vcFecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="vcUsuarioRed" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdPersonal" Nullable="true" />
+    <Property Type="String" Name="vcPersonal" Nullable="true" MaxLength="350" />
+    <Property Type="Decimal" Name="IdNumeroSocio" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="vcNombreAfiliado" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="vcFullNumeroSocio" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="IdExpedienteMedico" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IdNotaMedica" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IdNotaEnfermeria" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IdIngresoHospital" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="IdArea" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="vcArea" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="IdAgendaCita" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IdIngresoPaciente" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="bActivo" Nullable="false" />
+    <Property Type="String" Name="vcMensaje" Nullable="false" MaxLength="41" />
+  </ComplexType>
+  <ComplexType Name="sptblSesionUsuarioNM_Update_Result">
+    <Property Type="Int32" Name="OUT_c_mensaje" Nullable="false" />
+    <Property Type="String" Name="OUT_d_mensaje" Nullable="false" />
+    <Property Type="String" Name="OUT_MsgError" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spTerminarInterconsultaNM_Result">
+    <Property Type="Int32" Name="iError" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="idInterconsulta" Nullable="true" />
+  </ComplexType>
+</Schema>

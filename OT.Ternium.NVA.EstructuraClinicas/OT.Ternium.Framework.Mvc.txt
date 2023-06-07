@@ -1,0 +1,35 @@
+﻿Agregar el siguiente ruteo.
+
+routes.MapRoute(
+name: "AccessLogin",
+url: "Access/Login",
+defaults: new { controller = "Access", action = "Login"});
+               
+
+Agregar o incorporar las siguientes sentencias al global.asax.cs para integrar el framework OT.Ternium.Framework.Mvc
+
+
+        protected void Application_Start()
+        {
+            // inicializar FWK
+            OT.Ternium.Framework.Mvc.Application.Start();
+        }
+
+        protected void Application_BeginRequest(Object sender, EventArgs e)
+        {
+            // notificar Application_BeginRequest
+            OT.Ternium.Framework.Mvc.Application.BeginRequest();
+        }
+
+        protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+        {
+            // notificar Application_PostAuthenticateRequest
+            OT.Ternium.Framework.Mvc.Application.PostAuthenticateRequest();
+        }
+
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            // notificar Application_EndRequest
+            OT.Ternium.Framework.Mvc.Application.EndRequest();
+        }
+
